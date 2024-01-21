@@ -36,6 +36,10 @@ Partial Class mdiFinance
         VToolStripMenuItem = New ToolStripMenuItem()
         PaymentToolStripMenuItem = New ToolStripMenuItem()
         PaymentEntryToolStripMenuItem = New ToolStripMenuItem()
+        ViewPayToolStripMenuItem = New ToolStripMenuItem()
+        ToolStripMenuItem1 = New ToolStripMenuItem()
+        AddNewPenalityToolStripMenuItem = New ToolStripMenuItem()
+        ViewPenalityMasterToolStripMenuItem = New ToolStripMenuItem()
         ToolStripSeparator3 = New ToolStripSeparator()
         CloseLoanToolStripMenuItem = New ToolStripMenuItem()
         ToolStripSeparator1 = New ToolStripSeparator()
@@ -91,7 +95,7 @@ Partial Class mdiFinance
         ' 
         ' LoanToolStripMenuItem
         ' 
-        LoanToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {NewLoanRegistrationToolStripMenuItem, EditNewLoanRegistrationToolStripMenuItem, ToolStripSeparator2, EMIDetailsToolStripMenuItem, PaymentToolStripMenuItem, ToolStripSeparator3, CloseLoanToolStripMenuItem, ToolStripSeparator1, ReportsToolStripMenuItem})
+        LoanToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {NewLoanRegistrationToolStripMenuItem, EditNewLoanRegistrationToolStripMenuItem, ToolStripSeparator2, EMIDetailsToolStripMenuItem, PaymentToolStripMenuItem, ToolStripMenuItem1, ToolStripSeparator3, CloseLoanToolStripMenuItem, ToolStripSeparator1, ReportsToolStripMenuItem})
         LoanToolStripMenuItem.Name = "LoanToolStripMenuItem"
         LoanToolStripMenuItem.Size = New Size(55, 24)
         LoanToolStripMenuItem.Text = "Loan"
@@ -146,7 +150,7 @@ Partial Class mdiFinance
         ' 
         ' PaymentToolStripMenuItem
         ' 
-        PaymentToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {PaymentEntryToolStripMenuItem})
+        PaymentToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {PaymentEntryToolStripMenuItem, ViewPayToolStripMenuItem})
         PaymentToolStripMenuItem.Name = "PaymentToolStripMenuItem"
         PaymentToolStripMenuItem.Size = New Size(224, 26)
         PaymentToolStripMenuItem.Text = "Payment"
@@ -154,8 +158,33 @@ Partial Class mdiFinance
         ' PaymentEntryToolStripMenuItem
         ' 
         PaymentEntryToolStripMenuItem.Name = "PaymentEntryToolStripMenuItem"
-        PaymentEntryToolStripMenuItem.Size = New Size(224, 26)
+        PaymentEntryToolStripMenuItem.Size = New Size(210, 26)
         PaymentEntryToolStripMenuItem.Text = "Payment Entry"
+        ' 
+        ' ViewPayToolStripMenuItem
+        ' 
+        ViewPayToolStripMenuItem.Name = "ViewPayToolStripMenuItem"
+        ViewPayToolStripMenuItem.Size = New Size(210, 26)
+        ViewPayToolStripMenuItem.Text = "View Payment List"
+        ' 
+        ' ToolStripMenuItem1
+        ' 
+        ToolStripMenuItem1.DropDownItems.AddRange(New ToolStripItem() {AddNewPenalityToolStripMenuItem, ViewPenalityMasterToolStripMenuItem})
+        ToolStripMenuItem1.Name = "ToolStripMenuItem1"
+        ToolStripMenuItem1.Size = New Size(224, 26)
+        ToolStripMenuItem1.Text = "Penality"
+        ' 
+        ' AddNewPenalityToolStripMenuItem
+        ' 
+        AddNewPenalityToolStripMenuItem.Name = "AddNewPenalityToolStripMenuItem"
+        AddNewPenalityToolStripMenuItem.Size = New Size(228, 26)
+        AddNewPenalityToolStripMenuItem.Text = "Add New Penality"
+        ' 
+        ' ViewPenalityMasterToolStripMenuItem
+        ' 
+        ViewPenalityMasterToolStripMenuItem.Name = "ViewPenalityMasterToolStripMenuItem"
+        ViewPenalityMasterToolStripMenuItem.Size = New Size(228, 26)
+        ViewPenalityMasterToolStripMenuItem.Text = "View Penality Master"
         ' 
         ' ToolStripSeparator3
         ' 
@@ -214,31 +243,31 @@ Partial Class mdiFinance
         ' CreateNewCustomerToolStripMenuItem
         ' 
         CreateNewCustomerToolStripMenuItem.Name = "CreateNewCustomerToolStripMenuItem"
-        CreateNewCustomerToolStripMenuItem.Size = New Size(203, 26)
+        CreateNewCustomerToolStripMenuItem.Size = New Size(213, 26)
         CreateNewCustomerToolStripMenuItem.Text = "New Customer"
         ' 
         ' EditCustomerToolStripMenuItem
         ' 
         EditCustomerToolStripMenuItem.Name = "EditCustomerToolStripMenuItem"
-        EditCustomerToolStripMenuItem.Size = New Size(203, 26)
+        EditCustomerToolStripMenuItem.Size = New Size(213, 26)
         EditCustomerToolStripMenuItem.Text = "Edit Customer"
         ' 
         ' DeleteCustomerToolStripMenuItem
         ' 
         DeleteCustomerToolStripMenuItem.Name = "DeleteCustomerToolStripMenuItem"
-        DeleteCustomerToolStripMenuItem.Size = New Size(203, 26)
+        DeleteCustomerToolStripMenuItem.Size = New Size(213, 26)
         DeleteCustomerToolStripMenuItem.Text = "Delete Customer"
         ' 
         ' ToolStripSeparator4
         ' 
         ToolStripSeparator4.Name = "ToolStripSeparator4"
-        ToolStripSeparator4.Size = New Size(200, 6)
+        ToolStripSeparator4.Size = New Size(210, 6)
         ' 
         ' ReportsToolStripMenuItem1
         ' 
         ReportsToolStripMenuItem1.Name = "ReportsToolStripMenuItem1"
-        ReportsToolStripMenuItem1.Size = New Size(203, 26)
-        ReportsToolStripMenuItem1.Text = "Reports"
+        ReportsToolStripMenuItem1.Size = New Size(213, 26)
+        ReportsToolStripMenuItem1.Text = "View All Customer"
         ' 
         ' OfficeExpeToolStripMenuItem
         ' 
@@ -364,4 +393,8 @@ Partial Class mdiFinance
     Friend WithEvents FinanceChargeCalcToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PercentageCalcAmountToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents HelpToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents AddNewPenalityToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ViewPayToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ViewPenalityMasterToolStripMenuItem As ToolStripMenuItem
 End Class

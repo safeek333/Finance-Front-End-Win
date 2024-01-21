@@ -199,6 +199,7 @@ Public Class frmNewLoanReg
         txtCustAddr.Text = "NA"
         txtGarandorAddr.Text = "NA"
         LoanIntPerMonthUpdate()
+        CloseDateUpdate()
     End Sub
 
 
@@ -212,6 +213,7 @@ Public Class frmNewLoanReg
     Private Sub CloseDateUpdate()
         Try
             dtLoanClose.Value = DateAdd(DateInterval.Month, CDbl(txtEmiMonths.Text), dtLoanStart.Value)
+            dtLoanClose.Value = DateAdd(DateInterval.Day, -1, dtLoanClose.Value)
         Catch ex As Exception
 
         End Try

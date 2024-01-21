@@ -4,7 +4,13 @@
     <Compile Update="frmCollectEmiSingleCust.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="frmCustList.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="frmEditLoanRegistrationInput.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmLoanList.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="frmNewCust.vb">
@@ -14,6 +20,15 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="frmNewLoanReg.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmNewPenality.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmPaymentList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmPenalityList.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="LoginForm1.vb">

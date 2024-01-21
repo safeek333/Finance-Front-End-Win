@@ -297,7 +297,7 @@ Partial Class frmNewLoanReg
         ' 
         lblTitle.AutoSize = True
         lblTitle.Font = New Font("Arial Rounded MT Bold", 16.2F, FontStyle.Regular, GraphicsUnit.Point)
-        lblTitle.Location = New Point(8, 9)
+        lblTitle.Location = New Point(7, 9)
         lblTitle.Margin = New Padding(9, 0, 9, 0)
         lblTitle.Name = "lblTitle"
         lblTitle.Size = New Size(326, 32)

@@ -33,3 +33,8 @@ C:\Users\safiya\source\repos\Finance\Finance\bin\Release\net6.0-windows\WinForms
 C:\Users\safiya\source\repos\Finance\Finance\bin\Release\net6.0-windows\WinFormsApp1.pdb
 C:\Users\safiya\source\repos\Finance\Finance\obj\Release\net6.0-windows\Finance.frmCollectEmiSingleCust.resources
 C:\Users\safiya\source\repos\Finance\Finance\obj\Release\net6.0-windows\Finance.frmNewEmiPayment.resources
+C:\Users\safiya\source\repos\Finance\Finance\obj\Release\net6.0-windows\Finance.frmNewPenality.resources
+C:\Users\safiya\source\repos\Finance\Finance\obj\Release\net6.0-windows\Finance.frmPaymentList.resources
+C:\Users\safiya\source\repos\Finance\Finance\obj\Release\net6.0-windows\Finance.frmCustList.resources
+C:\Users\safiya\source\repos\Finance\Finance\obj\Release\net6.0-windows\Finance.frmPenalityList.resources
+C:\Users\safiya\source\repos\Finance\Finance\obj\Release\net6.0-windows\Finance.frmLoanList.resources

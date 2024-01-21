@@ -35,4 +35,24 @@ Public Class mdiFinance
         frmNewEmiPayment.Show()
 
     End Sub
+
+    Private Sub AddNewPenalityToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddNewPenalityToolStripMenuItem.Click
+        frmNewPenality.Show()
+    End Sub
+
+    Private Sub ViewPayToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ViewPayToolStripMenuItem.Click
+        frmPaymentList.OpenPaymentList(0)
+    End Sub
+
+    Private Sub ReportsToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ReportsToolStripMenuItem1.Click
+        frmCustList.OpenAllCustomerList()
+    End Sub
+
+    Private Sub ViewPenalityMasterToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ViewPenalityMasterToolStripMenuItem.Click
+        frmPenalityList.OpenAllPenalityList()
+    End Sub
+
+    Private Sub AllLoanDetailsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AllLoanDetailsToolStripMenuItem.Click
+        frmLoanList.OpenAllLoanList()
+    End Sub
 End Class

@@ -1,19 +1,7 @@
 ﻿Imports System.IO
 Imports System.Net
 
-Public Class frmCollectEmiSingleCust
-
-    Public pubLoanNum As Integer
-    Private Sub frmCollectEmiSingleCust_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'OpenCollectEmiSingleCust(0)
-
-        'Dim loanNum As Integer
-
-
-
-
-    End Sub
-
+Public Class frmLoanList
     Public Sub FetchEmiDetail(URL As Object, reqString As String)
         Try
             Dim myReq As HttpWebRequest
@@ -60,43 +48,40 @@ Public Class frmCollectEmiSingleCust
                 'iterate through the array created to show each value
 
 
-                dgCollectEmiSingleCust.Rows.Insert(J, New String() {MyArray(1), MyArray(2), MyArray(3), MyArray(4), MyArray(5), MyArray(6), MyArray(7),
-                                               MyArray(8), MyArray(9), MyArray(10), MyArray(17), FormatNumber(MyArray(18), 2)})
-                'MyArray(9), MyArray(10), MyArray(11), MyArray(12), MyArray(13), MyArray(14), MyArray(15), 
+                dgLoanList.Rows.Insert(J, New String() {MyArray(0), MyArray(1), MyArray(2), MyArray(3), MyArray(4), MyArray(5), MyArray(6), MyArray(7), MyArray(8),
+                MyArray(9), MyArray(10), MyArray(11), MyArray(12), MyArray(13), MyArray(14)})
 
 
             End If
         Next J
 
-        Me.dgCollectEmiSingleCust.Rows(UBound(MyData) - 1).DefaultCellStyle.BackColor = Color.Yellow
-    End Sub
-    Public Sub OpenCollectEmiSingleCust(loanNum As Long)
+        Try
+            Me.dgLoanList.Rows(UBound(MyData) - 1).DefaultCellStyle.BackColor = Color.Yellow
+        Catch
 
-        If (loanNum = 0) Then
-            loanNum = InputBox("Enter Loan Number")
-        End If
+        End Try
+
+    End Sub
+    Public Sub OpenAllLoanList()
+
+
 
         Me.Show()
 
-        Me.dgCollectEmiSingleCust.Rows.Clear()
+        Me.dgLoanList.Rows.Clear()
 
-        Call FetchEmiDetail("http://localhost:9091/loan/emilistedit",
-                   "{""loanNumber"":""" & loanNum &
-                   """}")
-
-
-
-        'Call to backend
-
-
-        'dgCollectEmiSingleCust.ControlCollection.DataGridViewControlCollection(1)
-
-
-
-
+        Call FetchEmiDetail("http://localhost:9091/loan/loanlist", "|")
     End Sub
 
-    Private Sub dgCollectEmiSingleCust_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgCollectEmiSingleCust.CellContentClick
-
+    Private Sub txtSearch_TextChanged(sender As Object, e As EventArgs) Handles txtSearch.TextChanged
+        Me.Show()
+        dgLoanList.Location = New Point(0, 50)
+        Me.dgLoanList.Rows.Clear()
+        Dim text As String
+        text = txtSearch.Text.Trim()
+        If (text = "") Then
+            text = "|"
+        End If
+        Call FetchEmiDetail("http://localhost:9091/loan/loanlist", text)
     End Sub
 End Class
