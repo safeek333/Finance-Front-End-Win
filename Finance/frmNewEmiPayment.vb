@@ -69,13 +69,13 @@ Public Class frmNewEmiPayment
         End If
     End Sub
 
-    Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
 
-    End Sub
 
     Private Sub frmNewEmiPayment_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cboPaymentType.SelectedIndex = 0
         txtPaymentDesc.Text = "RECEIVED FROM CUSTOMER FOR EMI"
+        txtEmiPaymentAmt.Focus()
+
     End Sub
 
     Private Sub loadBasicDetail_Click(sender As Object, e As EventArgs) Handles loadBasicDetail.Click

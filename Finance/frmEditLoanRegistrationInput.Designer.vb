@@ -26,6 +26,7 @@ Partial Class frmEditLoanRegistrationInput
         lblLoanNum = New Label()
         lblTitle = New Label()
         btnGetLoanDetails = New Button()
+        BackgroundWorker1 = New ComponentModel.BackgroundWorker()
         SuspendLayout()
         ' 
         ' txtLoanNum
@@ -67,6 +68,7 @@ Partial Class frmEditLoanRegistrationInput
         ' 
         ' frmEditLoanRegistrationInput
         ' 
+        AcceptButton = btnGetLoanDetails
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(395, 142)
@@ -75,7 +77,7 @@ Partial Class frmEditLoanRegistrationInput
         Controls.Add(lblLoanNum)
         Controls.Add(lblTitle)
         Name = "frmEditLoanRegistrationInput"
-        Text = "frmEditLoanRegistrationInput"
+        Text = "Enter Details"
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -84,4 +86,5 @@ Partial Class frmEditLoanRegistrationInput
     Friend WithEvents lblLoanNum As Label
     Friend WithEvents lblTitle As Label
     Friend WithEvents btnGetLoanDetails As Button
+    Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
 End Class

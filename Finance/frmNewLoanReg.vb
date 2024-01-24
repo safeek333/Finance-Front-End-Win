@@ -99,6 +99,12 @@ Public Class frmNewLoanReg
             If I = 14 Then
                 cboLoanStatus.SelectedItem = v
             End If
+            If I = 15 Then
+                txtLoanIntrestPercent.Text = v
+            End If
+            If I = 16 Then
+                txtDocumentPercent.Text = v
+            End If
 
         Next I
         Me.lblTitle.Text = Me.lblTitle.Text & " (Update)"
@@ -173,6 +179,8 @@ Public Class frmNewLoanReg
                    """,""loanStartDate"":""" & dtLoanStart.Value &
                    """,""loanCloseDate"":""" & dtLoanClose.Value &
                    """,""loanStatus"":""" & cboLoanStatus.SelectedItem &
+                   """,""loanIntrestPercent"":""" & txtLoanIntrestPercent.Text &
+                   """,""documentPercent"":""" & txtDocumentPercent.Text &
                    """}")
 
     End Sub
@@ -206,8 +214,10 @@ Public Class frmNewLoanReg
     Private Sub txtEmiMonths_TextChanged(sender As Object, e As EventArgs) Handles txtEmiMonths.TextChanged
         If IsNumeric(txtLoanAmt.Text) And IsNumeric(txtEmiMonths.Text) Then
             EmiAmountUpdate(CDbl(txtLoanAmt.Text), CInt(txtEmiMonths.Text))
+            LoanIntPerMonthUpdate()
         End If
         CloseDateUpdate()
+
     End Sub
 
     Private Sub CloseDateUpdate()
@@ -223,6 +233,7 @@ Public Class frmNewLoanReg
         Try
             If emiMonth > 0 Then
                 txtEmiAmount.Text = FormatNumber(loanAmount / emiMonth, 2,,, vbFalse)
+                LoanIntPerMonthUpdate()
             End If
         Catch ex As Exception
 
@@ -291,6 +302,7 @@ Public Class frmNewLoanReg
         Try
             If IsNumeric(txtLoanIntrestPercent.Text) Then
                 lblLoanIntPerMonth.Text = FormatNumber(CDbl(txtLoanIntrestPercent.Text) / 12.0, 2,,, vbFalse) & "% pm"
+                txtEmiAmount.Text = FormatNumber((CDbl(txtLoanAmt.Text) * (CDbl(txtLoanIntrestPercent.Text) + 100.0) / 100.0) / CDbl(txtEmiMonths.Text), 2,,, vbFalse)
             End If
         Catch ex As Exception
 
@@ -337,5 +349,9 @@ Public Class frmNewLoanReg
         Call FetchCustomerDetail("http://localhost:9091/loan/custedit",
                    "{""customerId"":""" & txtCustId.Text &
                    """}")
+    End Sub
+
+    Private Sub txtCustId_TextChanged(sender As Object, e As EventArgs) Handles txtCustId.TextChanged
+
     End Sub
 End Class

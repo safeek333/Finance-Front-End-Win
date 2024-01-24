@@ -95,7 +95,7 @@ Partial Class frmCollectEmiSingleCust
         emiId.MinimumWidth = 6
         emiId.Name = "emiId"
         emiId.ReadOnly = True
-        emiId.Width = 82
+        emiId.Width = 63
         ' 
         ' emiAmt
         ' 
@@ -106,7 +106,7 @@ Partial Class frmCollectEmiSingleCust
         emiAmt.MinimumWidth = 6
         emiAmt.Name = "emiAmt"
         emiAmt.ReadOnly = True
-        emiAmt.Width = 130
+        emiAmt.Width = 119
         ' 
         ' emiDate
         ' 
@@ -117,7 +117,7 @@ Partial Class frmCollectEmiSingleCust
         emiDate.MinimumWidth = 6
         emiDate.Name = "emiDate"
         emiDate.ReadOnly = True
-        emiDate.Width = 103
+        emiDate.Width = 95
         ' 
         ' finCharge
         ' 
@@ -128,7 +128,7 @@ Partial Class frmCollectEmiSingleCust
         finCharge.MinimumWidth = 6
         finCharge.Name = "finCharge"
         finCharge.ReadOnly = True
-        finCharge.Width = 132
+        finCharge.Width = 121
         ' 
         ' dicountOnFinCharge
         ' 
@@ -139,7 +139,7 @@ Partial Class frmCollectEmiSingleCust
         dicountOnFinCharge.MinimumWidth = 6
         dicountOnFinCharge.Name = "dicountOnFinCharge"
         dicountOnFinCharge.ReadOnly = True
-        dicountOnFinCharge.Width = 145
+        dicountOnFinCharge.Width = 133
         ' 
         ' emiStatus
         ' 
@@ -150,7 +150,7 @@ Partial Class frmCollectEmiSingleCust
         emiStatus.MinimumWidth = 6
         emiStatus.Name = "emiStatus"
         emiStatus.ReadOnly = True
-        emiStatus.Width = 117
+        emiStatus.Width = 108
         ' 
         ' emiPaidDate
         ' 
@@ -161,7 +161,7 @@ Partial Class frmCollectEmiSingleCust
         emiPaidDate.MinimumWidth = 6
         emiPaidDate.Name = "emiPaidDate"
         emiPaidDate.ReadOnly = True
-        emiPaidDate.Width = 139
+        emiPaidDate.Width = 164
         ' 
         ' emiPaymentRcvd
         ' 
@@ -226,7 +226,7 @@ Partial Class frmCollectEmiSingleCust
         Controls.Add(Label1)
         Controls.Add(lblTitle)
         Name = "frmCollectEmiSingleCust"
-        Text = "frmCollectEmiSingleCust"
+        Text = "Loan Emi Details"
         UseWaitCursor = True
         WindowState = FormWindowState.Maximized
         CType(dgCollectEmiSingleCust, ComponentModel.ISupportInitialize).EndInit()

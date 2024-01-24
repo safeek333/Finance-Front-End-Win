@@ -22,6 +22,15 @@ Partial Class frmCustList
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle1 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As DataGridViewCellStyle = New DataGridViewCellStyle()
         dgCustList = New DataGridView()
         custId = New DataGridViewTextBoxColumn()
         custType = New DataGridViewTextBoxColumn()
@@ -32,6 +41,8 @@ Partial Class frmCustList
         custDob = New DataGridViewTextBoxColumn()
         custAge = New DataGridViewTextBoxColumn()
         custStatus = New DataGridViewTextBoxColumn()
+        lblSearch = New Label()
+        txtSearch = New TextBox()
         CType(dgCustList, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -39,96 +50,145 @@ Partial Class frmCustList
         ' 
         dgCustList.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         dgCustList.Columns.AddRange(New DataGridViewColumn() {custId, custType, custName, custNative, custMobileNum, custAddr, custDob, custAge, custStatus})
-        dgCustList.Dock = DockStyle.Fill
+        dgCustList.Dock = DockStyle.Top
         dgCustList.Location = New Point(0, 0)
         dgCustList.Name = "dgCustList"
         dgCustList.RowHeadersWidth = 51
         dgCustList.RowTemplate.Height = 29
-        dgCustList.Size = New Size(800, 450)
+        dgCustList.Size = New Size(1051, 570)
         dgCustList.TabIndex = 0
         ' 
         ' custId
         ' 
+        custId.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+        DataGridViewCellStyle1.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        custId.DefaultCellStyle = DataGridViewCellStyle1
         custId.HeaderText = "CUST ID"
         custId.MinimumWidth = 6
         custId.Name = "custId"
         custId.ReadOnly = True
-        custId.Width = 125
+        custId.Width = 85
         ' 
         ' custType
         ' 
+        custType.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+        DataGridViewCellStyle2.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        custType.DefaultCellStyle = DataGridViewCellStyle2
         custType.HeaderText = "TYPE"
         custType.MinimumWidth = 6
         custType.Name = "custType"
         custType.ReadOnly = True
-        custType.Width = 125
+        custType.Width = 70
         ' 
         ' custName
         ' 
+        custName.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+        DataGridViewCellStyle3.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        custName.DefaultCellStyle = DataGridViewCellStyle3
         custName.HeaderText = "NAME"
         custName.MinimumWidth = 6
         custName.Name = "custName"
         custName.ReadOnly = True
-        custName.Width = 125
+        custName.Width = 80
         ' 
         ' custNative
         ' 
+        custNative.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+        DataGridViewCellStyle4.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        custNative.DefaultCellStyle = DataGridViewCellStyle4
         custNative.HeaderText = "NATIVE"
         custNative.MinimumWidth = 6
         custNative.Name = "custNative"
         custNative.ReadOnly = True
-        custNative.Width = 125
+        custNative.Width = 87
         ' 
         ' custMobileNum
         ' 
+        custMobileNum.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+        DataGridViewCellStyle5.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        custMobileNum.DefaultCellStyle = DataGridViewCellStyle5
         custMobileNum.HeaderText = "MOBILE NUMBER"
         custMobileNum.MinimumWidth = 6
         custMobileNum.Name = "custMobileNum"
         custMobileNum.ReadOnly = True
-        custMobileNum.Width = 125
+        custMobileNum.Width = 141
         ' 
         ' custAddr
         ' 
+        DataGridViewCellStyle6.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        custAddr.DefaultCellStyle = DataGridViewCellStyle6
         custAddr.HeaderText = "ADDRESS"
         custAddr.MinimumWidth = 6
         custAddr.Name = "custAddr"
         custAddr.ReadOnly = True
-        custAddr.Width = 125
+        custAddr.Width = 300
         ' 
         ' custDob
         ' 
+        custDob.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+        DataGridViewCellStyle7.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        custDob.DefaultCellStyle = DataGridViewCellStyle7
         custDob.HeaderText = "DATE OF BIRTH"
         custDob.MinimumWidth = 6
         custDob.Name = "custDob"
         custDob.ReadOnly = True
-        custDob.Width = 125
+        custDob.Width = 128
         ' 
         ' custAge
         ' 
+        custAge.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+        DataGridViewCellStyle8.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        custAge.DefaultCellStyle = DataGridViewCellStyle8
         custAge.HeaderText = "AGE"
         custAge.MinimumWidth = 6
         custAge.Name = "custAge"
         custAge.ReadOnly = True
-        custAge.Width = 125
+        custAge.Width = 66
         ' 
         ' custStatus
         ' 
+        custStatus.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+        DataGridViewCellStyle9.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        custStatus.DefaultCellStyle = DataGridViewCellStyle9
         custStatus.HeaderText = "STATUS"
         custStatus.MinimumWidth = 6
         custStatus.Name = "custStatus"
         custStatus.ReadOnly = True
-        custStatus.Width = 125
+        custStatus.Width = 88
+        ' 
+        ' lblSearch
+        ' 
+        lblSearch.AutoSize = True
+        lblSearch.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        lblSearch.Location = New Point(4, 591)
+        lblSearch.Name = "lblSearch"
+        lblSearch.Size = New Size(67, 28)
+        lblSearch.TabIndex = 4
+        lblSearch.Text = "Filter:"
+        ' 
+        ' txtSearch
+        ' 
+        txtSearch.BorderStyle = BorderStyle.FixedSingle
+        txtSearch.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        txtSearch.Location = New Point(71, 588)
+        txtSearch.Name = "txtSearch"
+        txtSearch.Size = New Size(272, 34)
+        txtSearch.TabIndex = 3
         ' 
         ' frmCustList
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(800, 450)
+        ClientSize = New Size(1051, 729)
+        Controls.Add(lblSearch)
+        Controls.Add(txtSearch)
         Controls.Add(dgCustList)
         Name = "frmCustList"
-        Text = "frmCustList"
+        Text = "Customers"
+        WindowState = FormWindowState.Maximized
         CType(dgCustList, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
+        PerformLayout()
     End Sub
 
     Friend WithEvents dgCustList As DataGridView
@@ -141,4 +201,6 @@ Partial Class frmCustList
     Friend WithEvents custDob As DataGridViewTextBoxColumn
     Friend WithEvents custAge As DataGridViewTextBoxColumn
     Friend WithEvents custStatus As DataGridViewTextBoxColumn
+    Friend WithEvents lblSearch As Label
+    Friend WithEvents txtSearch As TextBox
 End Class

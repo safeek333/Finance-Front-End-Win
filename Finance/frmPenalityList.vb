@@ -70,6 +70,20 @@ Public Class frmPenalityList
 
         Me.dgPenalityList.Rows.Clear()
 
-        Call FetchEmiDetail("http://localhost:9091/loan/penalitylist", "")
+        Call FetchEmiDetail("http://localhost:9091/loan/penalitylist", "|")
     End Sub
+
+    Private Sub txtSearch_TextChanged(sender As Object, e As EventArgs) Handles txtSearch.TextChanged
+        Me.Show()
+        dgPenalityList.Location = New Point(0, 50)
+        Me.dgPenalityList.Rows.Clear()
+        Dim text As String
+        text = txtSearch.Text.Trim()
+        If (text = "") Then
+            text = "|"
+        End If
+        Call FetchEmiDetail("http://localhost:9091/loan/penalitylist", text)
+    End Sub
+
+
 End Class

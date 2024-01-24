@@ -23,6 +23,7 @@ Partial Class frmNewPenality
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         GroupBox1 = New GroupBox()
+        Label1 = New Label()
         txtPenalityDesc = New TextBox()
         btnMakePenalityEntry = New Button()
         Label4 = New Label()
@@ -31,7 +32,6 @@ Partial Class frmNewPenality
         dtEffectiveDate = New DateTimePicker()
         lblEffectiveDate = New Label()
         lblTitle = New Label()
-        Label1 = New Label()
         GroupBox1.SuspendLayout()
         SuspendLayout()
         ' 
@@ -51,6 +51,16 @@ Partial Class frmNewPenality
         GroupBox1.TabIndex = 100
         GroupBox1.TabStop = False
         GroupBox1.Text = "Penality Entry"
+        ' 
+        ' Label1
+        ' 
+        Label1.AutoSize = True
+        Label1.Font = New Font("Arial Rounded MT Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point)
+        Label1.Location = New Point(279, 55)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(92, 20)
+        Label1.TabIndex = 109
+        Label1.Text = "per month"
         ' 
         ' txtPenalityDesc
         ' 
@@ -126,16 +136,6 @@ Partial Class frmNewPenality
         lblTitle.TabIndex = 99
         lblTitle.Text = "New Penality Entry"
         ' 
-        ' Label1
-        ' 
-        Label1.AutoSize = True
-        Label1.Font = New Font("Arial Rounded MT Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point)
-        Label1.Location = New Point(279, 55)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(92, 20)
-        Label1.TabIndex = 109
-        Label1.Text = "per month"
-        ' 
         ' frmNewPenality
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
@@ -144,7 +144,7 @@ Partial Class frmNewPenality
         Controls.Add(GroupBox1)
         Controls.Add(lblTitle)
         Name = "frmNewPenality"
-        Text = "frmNewPenality"
+        Text = "New Penality"
         GroupBox1.ResumeLayout(False)
         GroupBox1.PerformLayout()
         ResumeLayout(False)

@@ -177,13 +177,13 @@ Partial Class frmNewEmiPayment
         ' lblTitle
         ' 
         lblTitle.AutoSize = True
-        lblTitle.Font = New Font("Arial Rounded MT Bold", 16.2F, FontStyle.Regular, GraphicsUnit.Point)
+        lblTitle.Font = New Font("Arial Rounded MT Bold", 13.8F, FontStyle.Regular, GraphicsUnit.Point)
         lblTitle.Location = New Point(6, 9)
         lblTitle.Margin = New Padding(9, 0, 9, 0)
         lblTitle.Name = "lblTitle"
-        lblTitle.Size = New Size(282, 32)
+        lblTitle.Size = New Size(471, 27)
         lblTitle.TabIndex = 82
-        lblTitle.Text = "New Payment Entry"
+        lblTitle.Text = "New EMI Payment/Discount/Charge Entry"
         ' 
         ' dtLoanClose
         ' 
@@ -396,7 +396,7 @@ Partial Class frmNewEmiPayment
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(539, 682)
+        ClientSize = New Size(540, 611)
         Controls.Add(GroupBox3)
         Controls.Add(btnLoanNumEdit)
         Controls.Add(GroupBox2)
@@ -406,7 +406,7 @@ Partial Class frmNewEmiPayment
         Controls.Add(lblLoanNum)
         Controls.Add(lblTitle)
         Name = "frmNewEmiPayment"
-        Text = "frmNewEmiPayment"
+        Text = "New EMI Payment/Discount/Charge Entry"
         GroupBox1.ResumeLayout(False)
         GroupBox1.PerformLayout()
         GroupBox2.ResumeLayout(False)

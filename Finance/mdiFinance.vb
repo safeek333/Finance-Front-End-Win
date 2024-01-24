@@ -1,4 +1,5 @@
-﻿Imports WinFormsApp1
+﻿Imports System.Linq.Expressions
+Imports WinFormsApp1
 
 Public Class mdiFinance
     Private Sub NewLoanRegistrationToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NewLoanRegistrationToolStripMenuItem.Click
@@ -54,5 +55,34 @@ Public Class mdiFinance
 
     Private Sub AllLoanDetailsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AllLoanDetailsToolStripMenuItem.Click
         frmLoanList.OpenAllLoanList()
+    End Sub
+
+    Private Sub CreateNewCustomerToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CreateNewCustomerToolStripMenuItem.Click
+        frmNewCust.Show()
+    End Sub
+
+    Private Sub EditCustomerToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EditCustomerToolStripMenuItem.Click
+        If frmNewCust.Visible Then
+            frmNewCust.Close()
+        End If
+        Dim custId As String
+
+        custId = ""
+        Do Until IsNumeric(custId)
+            custId = InputBox("Enter Customer ID")
+        Loop
+
+        frmNewCust.Show()
+        frmNewCust.txtCustId.Text = custId
+        frmNewCust.txtCustId.Enabled = False
+
+        Dim myData As String = "{""customerId"":""" & custId & """}"
+        frmNewCust.EditCustomer("http://localhost:9091/loan/custedit", myData)
+
+
+    End Sub
+
+    Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
+        End
     End Sub
 End Class

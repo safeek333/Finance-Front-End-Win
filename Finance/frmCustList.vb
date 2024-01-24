@@ -65,6 +65,18 @@ Public Class frmCustList
 
         Me.dgCustList.Rows.Clear()
 
-        Call FetchEmiDetail("http://localhost:9091/loan/custlist", "")
+        Call FetchEmiDetail("http://localhost:9091/loan/custlist", "|")
+    End Sub
+
+    Private Sub txtSearch_TextChanged(sender As Object, e As EventArgs) Handles txtSearch.TextChanged
+        Me.Show()
+        dgCustList.Location = New Point(0, 50)
+        Me.dgCustList.Rows.Clear()
+        Dim text As String
+        text = txtSearch.Text.Trim()
+        If (text = "") Then
+            text = "|"
+        End If
+        Call FetchEmiDetail("http://localhost:9091/loan/custlist", text)
     End Sub
 End Class

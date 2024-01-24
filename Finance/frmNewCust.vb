@@ -181,4 +181,34 @@ Public Class frmNewCust
             MsgBox("Error: " & ex.Message)
         End Try
     End Sub
+
+    Public Sub EditCustomer(URL As Object, reqString As String)
+        Try
+            Dim myReq As HttpWebRequest
+            Dim myResp As HttpWebResponse
+            Dim myReader As StreamReader
+            myReq = HttpWebRequest.Create(URL)
+            myReq.Method = "POST"
+            myReq.ContentType = "application/json"
+            myReq.Accept = "application/json"
+            myReq.Headers.Add("Authorization", "Bearer LKJLMLKJLHLMKLJLM839800K=")
+            Dim myData = reqString.Replace(vbCrLf, "\n")
+            'txtInsDetails.Text = myData
+            'Dim myData As String = "{""loanNumber"":& txtLoanNumber.,""userId"":""10000004030"",""applicationName"":""MyTestRESTAPI""}"
+            myReq.GetRequestStream.Write(System.Text.Encoding.UTF8.GetBytes(myData), 0, System.Text.Encoding.UTF8.GetBytes(myData).Count)
+            myResp = myReq.GetResponse
+            myReader = New System.IO.StreamReader(myResp.GetResponseStream)
+            Dim detail As String
+            detail = myReader.ReadToEnd
+            If detail.Count > 5 Then
+                Me.Show()
+                SplitRecToView(detail)
+            Else
+                MsgBox("Customer Not Found")
+            End If
+
+        Catch ex As Exception
+            MsgBox("Error: " & ex.Message)
+        End Try
+    End Sub
 End Class
