@@ -1,5 +1,7 @@
 ﻿Imports System.IO
 Imports System.Net
+Imports iTextSharp.text
+Imports iTextSharp.text.pdf
 
 Public Class frmPaymentList
     Public Sub FetchEmiDetail(URL As Object, reqString As String)
@@ -72,4 +74,70 @@ Public Class frmPaymentList
                    """}")
     End Sub
 
+    Private Sub ExportAsPDF()
+        Dim pdfTable As New PdfPTable(dgPaymentList.ColumnCount)
+        pdfTable.DefaultCell.Padding = 3
+
+        Dim widths As Single() = {0, 0, 0, 0, 0, 0}
+
+        Dim j As Integer = 0
+        For Each column As DataGridViewColumn In dgPaymentList.Columns
+            widths(j) = column.Width - 25
+            j += 1
+        Next
+
+        pdfTable.SetWidthPercentage(widths, PageSize.A4)
+
+        pdfTable.HorizontalAlignment = Element.ALIGN_CENTER
+        pdfTable.DefaultCell.BorderWidth = 1
+        pdfTable.HeaderRows = 1 'Add header for each page
+
+
+        'Adding Header  
+        For Each column As DataGridViewColumn In dgPaymentList.Columns
+            Dim cell As New PdfPCell(New Phrase(column.HeaderText))
+            cell.BackgroundColor = iTextSharp.text.BaseColor.LIGHT_GRAY
+            pdfTable.AddCell(cell)
+        Next
+
+        'Adding DataRow
+        Dim cellvalue As String = ""
+        Dim i As Integer = 0
+        For Each row As DataGridViewRow In dgPaymentList.Rows
+            For Each cell As DataGridViewCell In row.Cells
+                cellvalue = cell.FormattedValue
+                pdfTable.AddCell(Convert.ToString(cellvalue))
+            Next
+        Next
+
+        'Exporting to PDF
+        Dim folderPath As String = "C:\PDFs\"
+        If Not Directory.Exists(folderPath) Then
+            Directory.CreateDirectory(folderPath)
+        End If
+        Dim phrase As Phrase
+        Dim font As Font = New Font(font.FontFamily.HELVETICA, 16, FontStyle.Bold)
+
+        phrase = New Phrase(Me.Text & " Report", font)
+
+        Using stream As New FileStream(folderPath & Me.Text & ".pdf", FileMode.Create)
+            Dim pdfDoc As New iTextSharp.text.Document(PageSize.A4, 50.0F, 25.0F, 50.0F, 25.0F)
+
+            PdfWriter.GetInstance(pdfDoc, stream)
+            pdfDoc.Open()
+            pdfDoc.Add(phrase)
+            pdfDoc.Add(pdfTable)
+            pdfDoc.Close()
+            stream.Close()
+        End Using
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Try
+            ExportAsPDF()
+            MsgBox("Exported Successfully")
+        Catch
+            MsgBox("Export Not Done")
+        End Try
+    End Sub
 End Class

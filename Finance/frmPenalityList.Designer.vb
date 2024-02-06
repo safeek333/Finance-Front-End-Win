@@ -33,6 +33,10 @@ Partial Class frmPenalityList
         penalityDesc = New DataGridViewTextBoxColumn()
         lblSearch = New Label()
         txtSearch = New TextBox()
+        Button1 = New Button()
+        PrintDialog1 = New PrintDialog()
+        PrintDocument1 = New Printing.PrintDocument()
+        btnPrint = New Button()
         CType(dgPenalityList, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -51,18 +55,18 @@ Partial Class frmPenalityList
         ' penalityId
         ' 
         penalityId.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
-        DataGridViewCellStyle1.Font = New Font("Microsoft Sans Serif", 12.0F, FontStyle.Bold, GraphicsUnit.Point)
+        DataGridViewCellStyle1.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point)
         penalityId.DefaultCellStyle = DataGridViewCellStyle1
-        penalityId.HeaderText = "PENALITY ID"
+        penalityId.HeaderText = "ID"
         penalityId.MinimumWidth = 6
         penalityId.Name = "penalityId"
         penalityId.ReadOnly = True
-        penalityId.Width = 111
+        penalityId.Width = 53
         ' 
         ' penalityAmt
         ' 
         penalityAmt.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
-        DataGridViewCellStyle2.Font = New Font("Microsoft Sans Serif", 12.0F, FontStyle.Bold, GraphicsUnit.Point)
+        DataGridViewCellStyle2.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point)
         penalityAmt.DefaultCellStyle = DataGridViewCellStyle2
         penalityAmt.HeaderText = "AMOUNT (per month)"
         penalityAmt.MinimumWidth = 6
@@ -73,7 +77,7 @@ Partial Class frmPenalityList
         ' effectiveDate
         ' 
         effectiveDate.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
-        DataGridViewCellStyle3.Font = New Font("Microsoft Sans Serif", 12.0F, FontStyle.Bold, GraphicsUnit.Point)
+        DataGridViewCellStyle3.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point)
         effectiveDate.DefaultCellStyle = DataGridViewCellStyle3
         effectiveDate.HeaderText = "EFFECTIVE DATE"
         effectiveDate.MinimumWidth = 6
@@ -84,7 +88,7 @@ Partial Class frmPenalityList
         ' penalityDesc
         ' 
         penalityDesc.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
-        DataGridViewCellStyle4.Font = New Font("Microsoft Sans Serif", 12.0F, FontStyle.Bold, GraphicsUnit.Point)
+        DataGridViewCellStyle4.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point)
         penalityDesc.DefaultCellStyle = DataGridViewCellStyle4
         penalityDesc.HeaderText = "DESCRIPTION"
         penalityDesc.MinimumWidth = 6
@@ -95,7 +99,7 @@ Partial Class frmPenalityList
         ' lblSearch
         ' 
         lblSearch.AutoSize = True
-        lblSearch.Font = New Font("Segoe UI", 12.0F, FontStyle.Bold, GraphicsUnit.Point)
+        lblSearch.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
         lblSearch.Location = New Point(1, 579)
         lblSearch.Name = "lblSearch"
         lblSearch.Size = New Size(67, 28)
@@ -105,22 +109,49 @@ Partial Class frmPenalityList
         ' txtSearch
         ' 
         txtSearch.BorderStyle = BorderStyle.FixedSingle
-        txtSearch.Font = New Font("Segoe UI", 12.0F, FontStyle.Bold, GraphicsUnit.Point)
+        txtSearch.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
         txtSearch.Location = New Point(68, 576)
         txtSearch.Name = "txtSearch"
         txtSearch.Size = New Size(272, 34)
         txtSearch.TabIndex = 5
         ' 
+        ' Button1
+        ' 
+        Button1.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        Button1.Location = New Point(68, 633)
+        Button1.Name = "Button1"
+        Button1.Size = New Size(272, 41)
+        Button1.TabIndex = 7
+        Button1.Text = "Export As PDF"
+        Button1.UseVisualStyleBackColor = True
+        ' 
+        ' PrintDialog1
+        ' 
+        PrintDialog1.Document = PrintDocument1
+        PrintDialog1.UseEXDialog = True
+        ' 
+        ' btnPrint
+        ' 
+        btnPrint.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        btnPrint.Location = New Point(68, 690)
+        btnPrint.Name = "btnPrint"
+        btnPrint.Size = New Size(272, 41)
+        btnPrint.TabIndex = 8
+        btnPrint.Text = "Print"
+        btnPrint.UseVisualStyleBackColor = True
+        ' 
         ' frmPenalityList
         ' 
-        AutoScaleDimensions = New SizeF(8.0F, 20.0F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(800, 714)
+        ClientSize = New Size(800, 755)
+        Controls.Add(btnPrint)
+        Controls.Add(Button1)
         Controls.Add(lblSearch)
         Controls.Add(txtSearch)
         Controls.Add(dgPenalityList)
         Name = "frmPenalityList"
-        Text = "Penality"
+        Text = "Additional Finance Charges"
         WindowState = FormWindowState.Maximized
         CType(dgPenalityList, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
@@ -128,10 +159,14 @@ Partial Class frmPenalityList
     End Sub
 
     Friend WithEvents dgPenalityList As DataGridView
+    Friend WithEvents lblSearch As Label
+    Friend WithEvents txtSearch As TextBox
+    Friend WithEvents Button1 As Button
     Friend WithEvents penalityId As DataGridViewTextBoxColumn
     Friend WithEvents penalityAmt As DataGridViewTextBoxColumn
     Friend WithEvents effectiveDate As DataGridViewTextBoxColumn
     Friend WithEvents penalityDesc As DataGridViewTextBoxColumn
-    Friend WithEvents lblSearch As Label
-    Friend WithEvents txtSearch As TextBox
+    Friend WithEvents PrintDialog1 As PrintDialog
+    Friend WithEvents btnPrint As Button
+    Friend WithEvents PrintDocument1 As Printing.PrintDocument
 End Class

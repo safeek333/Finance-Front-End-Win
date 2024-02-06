@@ -82,11 +82,21 @@ Public Class frmNewEmiPayment
         If IsNumeric(txtLoanNum.Text) Then
             txtLoanNum.Text = FormatNumber(CInt(txtLoanNum.Text), 0,,, vbFalse)
             GetLoanDetailBasic(txtLoanNum.Text)
+            UpdateBill()
+
         Else
             MsgBox("Invalid Loan Number, Try Again")
         End If
     End Sub
 
+    Private Sub UpdateBill()
+        'Try
+        'frmPaymentBill.Show()
+        'frmPaymentBill.UpdateBillContent(Me.dtEmiPaymentDate.Value.ToString(), Me.txtCustAddr.Text, Me.txtEmiAmount.Text, "Yet to 1", "Yet to 2", Me.txtLoanNum.Text, "Yet to 3", "Y24", Me.txtEmiMonths.Text, Me.txtEmiPaymentAmt.Text, Me.txtEmiPaymentAmt.Text)
+        'Catch ex As Exception
+
+        'End Try
+    End Sub
     Public Sub GetLoanDetail(URL As Object, reqString As String)
         Try
             Dim myReq As HttpWebRequest
@@ -184,5 +194,17 @@ Public Class frmNewEmiPayment
         Call GetLoanDetail("http://localhost:9091/loan/loanedit",
                    "{""loanNumber"":""" & loanNumber &
                    """}")
+    End Sub
+
+    Private Sub dtEmiPaymentDate_ValueChanged(sender As Object, e As EventArgs) Handles dtEmiPaymentDate.ValueChanged
+        UpdateBill()
+    End Sub
+
+    Private Sub txtEmiPaymentAmt_TextChanged(sender As Object, e As EventArgs) Handles txtEmiPaymentAmt.TextChanged
+        UpdateBill()
+    End Sub
+
+    Private Sub cboLoanStatus_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboLoanStatus.SelectedIndexChanged
+        UpdateBill()
     End Sub
 End Class

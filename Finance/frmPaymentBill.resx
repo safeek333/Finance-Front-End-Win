@@ -1,0 +1,711 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!--
+    Microsoft ResX Schema 
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing"">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="&gt;&gt;Label5.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;Label1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblBillTotal.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;ImageList2.Name" xml:space="preserve">
+    <value>ImageList2</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>8, 20</value>
+  </data>
+  <data name="ImageList2.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAEZTeXN0ZW0uV2luZG93cy5Gb3JtcywgQ3VsdHVyZT1uZXV0cmFs
+        LCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5BQEAAAAmU3lzdGVtLldpbmRvd3MuRm9ybXMu
+        SW1hZ2VMaXN0U3RyZWFtZXIBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAA4AcAAAJNU0Z0AUkBTAMBAQAB
+        GAEAASABAAEQAQABEAEABP8BCQEQCP8BQgFNATYBBAYAATYBBAIAASgDAAFAAwABEAMAAQEBAAEIBgAB
+        BBgAAYACAAGAAwACgAEAAYADAAGAAQABgAEAAoACAAPAAQABwAHcAcABAAHwAcoBpgEAATMFAAEzAQAB
+        MwEAATMBAAIzAgADFgEAAxwBAAMiAQADKQEAA1UBAANNAQADQgEAAzkBAAGAAXwB/wEAAlAB/wEAAZMB
+        AAHWAQAB/wHsAcwBAAHGAdYB7wEAAdYC5wEAAZABqQGtAgAB/wEzAwABZgMAAZkDAAHMAgABMwMAAjMC
+        AAEzAWYCAAEzAZkCAAEzAcwCAAEzAf8CAAFmAwABZgEzAgACZgIAAWYBmQIAAWYBzAIAAWYB/wIAAZkD
+        AAGZATMCAAGZAWYCAAKZAgABmQHMAgABmQH/AgABzAMAAcwBMwIAAcwBZgIAAcwBmQIAAswCAAHMAf8C
+        AAH/AWYCAAH/AZkCAAH/AcwBAAEzAf8CAAH/AQABMwEAATMBAAFmAQABMwEAAZkBAAEzAQABzAEAATMB
+        AAH/AQAB/wEzAgADMwEAAjMBZgEAAjMBmQEAAjMBzAEAAjMB/wEAATMBZgIAATMBZgEzAQABMwJmAQAB
+        MwFmAZkBAAEzAWYBzAEAATMBZgH/AQABMwGZAgABMwGZATMBAAEzAZkBZgEAATMCmQEAATMBmQHMAQAB
+        MwGZAf8BAAEzAcwCAAEzAcwBMwEAATMBzAFmAQABMwHMAZkBAAEzAswBAAEzAcwB/wEAATMB/wEzAQAB
+        MwH/AWYBAAEzAf8BmQEAATMB/wHMAQABMwL/AQABZgMAAWYBAAEzAQABZgEAAWYBAAFmAQABmQEAAWYB
+        AAHMAQABZgEAAf8BAAFmATMCAAFmAjMBAAFmATMBZgEAAWYBMwGZAQABZgEzAcwBAAFmATMB/wEAAmYC
+        AAJmATMBAANmAQACZgGZAQACZgHMAQABZgGZAgABZgGZATMBAAFmAZkBZgEAAWYCmQEAAWYBmQHMAQAB
+        ZgGZAf8BAAFmAcwCAAFmAcwBMwEAAWYBzAGZAQABZgLMAQABZgHMAf8BAAFmAf8CAAFmAf8BMwEAAWYB
+        /wGZAQABZgH/AcwBAAHMAQAB/wEAAf8BAAHMAQACmQIAAZkBMwGZAQABmQEAAZkBAAGZAQABzAEAAZkD
+        AAGZAjMBAAGZAQABZgEAAZkBMwHMAQABmQEAAf8BAAGZAWYCAAGZAWYBMwEAAZkBMwFmAQABmQFmAZkB
+        AAGZAWYBzAEAAZkBMwH/AQACmQEzAQACmQFmAQADmQEAApkBzAEAApkB/wEAAZkBzAIAAZkBzAEzAQAB
+        ZgHMAWYBAAGZAcwBmQEAAZkCzAEAAZkBzAH/AQABmQH/AgABmQH/ATMBAAGZAcwBZgEAAZkB/wGZAQAB
+        mQH/AcwBAAGZAv8BAAHMAwABmQEAATMBAAHMAQABZgEAAcwBAAGZAQABzAEAAcwBAAGZATMCAAHMAjMB
+        AAHMATMBZgEAAcwBMwGZAQABzAEzAcwBAAHMATMB/wEAAcwBZgIAAcwBZgEzAQABmQJmAQABzAFmAZkB
+        AAHMAWYBzAEAAZkBZgH/AQABzAGZAgABzAGZATMBAAHMAZkBZgEAAcwCmQEAAcwBmQHMAQABzAGZAf8B
+        AALMAgACzAEzAQACzAFmAQACzAGZAQADzAEAAswB/wEAAcwB/wIAAcwB/wEzAQABmQH/AWYBAAHMAf8B
+        mQEAAcwB/wHMAQABzAL/AQABzAEAATMBAAH/AQABZgEAAf8BAAGZAQABzAEzAgAB/wIzAQAB/wEzAWYB
+        AAH/ATMBmQEAAf8BMwHMAQAB/wEzAf8BAAH/AWYCAAH/AWYBMwEAAcwCZgEAAf8BZgGZAQAB/wFmAcwB
+        AAHMAWYB/wEAAf8BmQIAAf8BmQEzAQAB/wGZAWYBAAH/ApkBAAH/AZkBzAEAAf8BmQH/AQAB/wHMAgAB
+        /wHMATMBAAH/AcwBZgEAAf8BzAGZAQAB/wLMAQAB/wHMAf8BAAL/ATMBAAHMAf8BZgEAAv8BmQEAAv8B
+        zAEAAmYB/wEAAWYB/wFmAQABZgL/AQAB/wJmAQAB/wFmAf8BAAL/AWYBAAEhAQABpQEAA18BAAN3AQAD
+        hgEAA5YBAAPLAQADsgEAA9cBAAPdAQAD4wEAA+oBAAPxAQAD+AEAAfAB+wH/AQABpAKgAQADgAMAAf8C
+        AAH/AwAC/wEAAf8DAAH/AQAB/wEAAv8CAAP/AQAB8QK8A/AB8QPyBvMwAAHyArwF8APxA/IC8TAAAbwC
+        8AHxAfAB8QHwBPIE8wHyMAABBwTxAvAD8gHxA/IBGwHxMAABvAfwAvEB8gHxAfIB8wLyMAAB8wS8BPAB
+        8QHyAfEB8gHzAvIwAAHxA/ABvALwBvEB8gLxMAAB8QPwAbwE8AHxAfAB8QTyMAAB8wO8CPAE8jAAAfEC
+        8AG8B/AB8QHwA/IwAAHzArwK8AHxAfIB8TAAAfMCvA3wMAAB8QG8DvAwAAH0AbwC8AHxCvABvDAAAfQB
+        vAHxAvAB8QHyAfEB8ALxAfABvALwAbwwAAHxAvABvAHwAfEI8AHxAbwwAAFCAU0BPgcAAT4DAAEoAwAB
+        QAMAARADAAEBAQABAQUAAYAXAAP/lwAL
+</value>
+  </data>
+  <data name="lblBillVeichleNo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>744, 290</value>
+  </data>
+  <data name="&gt;&gt;lblBillDate.Name" xml:space="preserve">
+    <value>lblBillDate</value>
+  </data>
+  <data name="&gt;&gt;Label6.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;lblBillVeichleNo.Name" xml:space="preserve">
+    <value>lblBillVeichleNo</value>
+  </data>
+  <data name="&gt;&gt;Label7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblInWords2.Name" xml:space="preserve">
+    <value>lblInWords2</value>
+  </data>
+  <data name="&gt;&gt;ImageList1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ImageList, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblInWords1.Name" xml:space="preserve">
+    <value>lblInWords1</value>
+  </data>
+  <data name="&gt;&gt;lblCustName.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;lblBillDate.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lblBillVeichleNo.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;lblBillAmount.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblCustName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>44, 150</value>
+  </data>
+  <data name="&gt;&gt;Label7.Name" xml:space="preserve">
+    <value>Label7</value>
+  </data>
+  <data name="&gt;&gt;lblBillTotal.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Label7.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;Label9.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;Label12.Name" xml:space="preserve">
+    <value>Label12</value>
+  </data>
+  <data name="&gt;&gt;lblInWords2.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Label5.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Payment Bill</value>
+  </data>
+  <data name="lblBillEmiNo.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;lblInWords1.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;Label12.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;lblBillDate.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblBillLoanNo.Name" xml:space="preserve">
+    <value>lblBillLoanNo</value>
+  </data>
+  <data name="lblBillDate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 23</value>
+  </data>
+  <data name="&gt;&gt;lblCustName.Name" xml:space="preserve">
+    <value>lblCustName</value>
+  </data>
+  <data name="&gt;&gt;lblRupees.Name" xml:space="preserve">
+    <value>lblRupees</value>
+  </data>
+  <data name="Label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>415, 386</value>
+  </data>
+  <data name="&gt;&gt;Label8.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;ImageList1.Name" xml:space="preserve">
+    <value>ImageList1</value>
+  </data>
+  <data name="&gt;&gt;Label11.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblBillTotal.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="Label1.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="&gt;&gt;lblInWords1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblInWords2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>44, 236</value>
+  </data>
+  <data name="&gt;&gt;lblBillLoanNo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblEmiDate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>frmPaymentBill</value>
+  </data>
+  <data name="&gt;&gt;Label5.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblInWords1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Label10.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="Label3.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="lblBillAmount.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="Label8.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;Label9.Name" xml:space="preserve">
+    <value>Label9</value>
+  </data>
+  <data name="&gt;&gt;lblBillAmount.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;Label3.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;lblBilTotalEmiNos.Name" xml:space="preserve">
+    <value>lblBilTotalEmiNos</value>
+  </data>
+  <data name="lblInWords2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 23</value>
+  </data>
+  <data name="&gt;&gt;lblCustName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblBillEmiNo.Name" xml:space="preserve">
+    <value>lblBillEmiNo</value>
+  </data>
+  <data name="&gt;&gt;Label3.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblInWords2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblEmiDate.Name" xml:space="preserve">
+    <value>lblEmiDate</value>
+  </data>
+  <data name="Label6.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="&gt;&gt;Label10.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblRupees.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblEmiDate.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="Label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>657, 462</value>
+  </data>
+  <data name="Label4.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="&gt;&gt;Label8.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblBillVeichleNo.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Label1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lblBillEmiNo.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;Label10.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="lblRupees.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;Label2.Name" xml:space="preserve">
+    <value>Label2</value>
+  </data>
+  <data name="&gt;&gt;Label1.Name" xml:space="preserve">
+    <value>Label1</value>
+  </data>
+  <data name="&gt;&gt;Label11.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="lblBillTotal.Location" type="System.Drawing.Point, System.Drawing">
+    <value>745, 442</value>
+  </data>
+  <data name="&gt;&gt;Label8.Name" xml:space="preserve">
+    <value>Label8</value>
+  </data>
+  <data name="Label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>655, 386</value>
+  </data>
+  <data name="&gt;&gt;lblBilTotalEmiNos.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblEmiDate.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Label6.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="Label11.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;lblBillLoanNo.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="Label12.Location" type="System.Drawing.Point, System.Drawing">
+    <value>689, 114</value>
+  </data>
+  <data name="Label9.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="lblBilTotalEmiNos.Location" type="System.Drawing.Point, System.Drawing">
+    <value>516, 352</value>
+  </data>
+  <data name="lblBillLoanNo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 23</value>
+  </data>
+  <data name="lblRupees.Location" type="System.Drawing.Point, System.Drawing">
+    <value>301, 189</value>
+  </data>
+  <data name="Label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>111, 386</value>
+  </data>
+  <data name="lblBillEmiNo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>417, 352</value>
+  </data>
+  <data name="&gt;&gt;Label11.Name" xml:space="preserve">
+    <value>Label11</value>
+  </data>
+  <data name="Label6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 386</value>
+  </data>
+  <data name="&gt;&gt;lblBillDate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblBillEmiNo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Label8.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="Label2.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="lblBillAmount.Location" type="System.Drawing.Point, System.Drawing">
+    <value>745, 352</value>
+  </data>
+  <data name="&gt;&gt;Label4.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblBillTotal.Name" xml:space="preserve">
+    <value>lblBillTotal</value>
+  </data>
+  <data name="&gt;&gt;Label5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ImageList2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ImageList, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblRupees.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Label9.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ImageList1.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAEZTeXN0ZW0uV2luZG93cy5Gb3JtcywgQ3VsdHVyZT1uZXV0cmFs
+        LCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5BQEAAAAmU3lzdGVtLldpbmRvd3MuRm9ybXMu
+        SW1hZ2VMaXN0U3RyZWFtZXIBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAA4gcAAAJNU0Z0AUkBTAMBAQAB
+        CAEAARgBAAEQAQABEAEABP8BCQEQCP8BQgFNATYBBAYAATYBBAIAASgDAAFAAwABEAMAAQEBAAEIBgAB
+        BBgAAYACAAGAAwACgAEAAYADAAGAAQABgAEAAoACAAPAAQABwAHcAcABAAHwAcoBpgEAATMFAAEzAQAB
+        MwEAATMBAAIzAgADFgEAAxwBAAMiAQADKQEAA1UBAANNAQADQgEAAzkBAAGAAXwB/wEAAlAB/wEAAZMB
+        AAHWAQAB/wHsAcwBAAHGAdYB7wEAAdYC5wEAAZABqQGtAgAB/wEzAwABZgMAAZkDAAHMAgABMwMAAjMC
+        AAEzAWYCAAEzAZkCAAEzAcwCAAEzAf8CAAFmAwABZgEzAgACZgIAAWYBmQIAAWYBzAIAAWYB/wIAAZkD
+        AAGZATMCAAGZAWYCAAKZAgABmQHMAgABmQH/AgABzAMAAcwBMwIAAcwBZgIAAcwBmQIAAswCAAHMAf8C
+        AAH/AWYCAAH/AZkCAAH/AcwBAAEzAf8CAAH/AQABMwEAATMBAAFmAQABMwEAAZkBAAEzAQABzAEAATMB
+        AAH/AQAB/wEzAgADMwEAAjMBZgEAAjMBmQEAAjMBzAEAAjMB/wEAATMBZgIAATMBZgEzAQABMwJmAQAB
+        MwFmAZkBAAEzAWYBzAEAATMBZgH/AQABMwGZAgABMwGZATMBAAEzAZkBZgEAATMCmQEAATMBmQHMAQAB
+        MwGZAf8BAAEzAcwCAAEzAcwBMwEAATMBzAFmAQABMwHMAZkBAAEzAswBAAEzAcwB/wEAATMB/wEzAQAB
+        MwH/AWYBAAEzAf8BmQEAATMB/wHMAQABMwL/AQABZgMAAWYBAAEzAQABZgEAAWYBAAFmAQABmQEAAWYB
+        AAHMAQABZgEAAf8BAAFmATMCAAFmAjMBAAFmATMBZgEAAWYBMwGZAQABZgEzAcwBAAFmATMB/wEAAmYC
+        AAJmATMBAANmAQACZgGZAQACZgHMAQABZgGZAgABZgGZATMBAAFmAZkBZgEAAWYCmQEAAWYBmQHMAQAB
+        ZgGZAf8BAAFmAcwCAAFmAcwBMwEAAWYBzAGZAQABZgLMAQABZgHMAf8BAAFmAf8CAAFmAf8BMwEAAWYB
+        /wGZAQABZgH/AcwBAAHMAQAB/wEAAf8BAAHMAQACmQIAAZkBMwGZAQABmQEAAZkBAAGZAQABzAEAAZkD
+        AAGZAjMBAAGZAQABZgEAAZkBMwHMAQABmQEAAf8BAAGZAWYCAAGZAWYBMwEAAZkBMwFmAQABmQFmAZkB
+        AAGZAWYBzAEAAZkBMwH/AQACmQEzAQACmQFmAQADmQEAApkBzAEAApkB/wEAAZkBzAIAAZkBzAEzAQAB
+        ZgHMAWYBAAGZAcwBmQEAAZkCzAEAAZkBzAH/AQABmQH/AgABmQH/ATMBAAGZAcwBZgEAAZkB/wGZAQAB
+        mQH/AcwBAAGZAv8BAAHMAwABmQEAATMBAAHMAQABZgEAAcwBAAGZAQABzAEAAcwBAAGZATMCAAHMAjMB
+        AAHMATMBZgEAAcwBMwGZAQABzAEzAcwBAAHMATMB/wEAAcwBZgIAAcwBZgEzAQABmQJmAQABzAFmAZkB
+        AAHMAWYBzAEAAZkBZgH/AQABzAGZAgABzAGZATMBAAHMAZkBZgEAAcwCmQEAAcwBmQHMAQABzAGZAf8B
+        AALMAgACzAEzAQACzAFmAQACzAGZAQADzAEAAswB/wEAAcwB/wIAAcwB/wEzAQABmQH/AWYBAAHMAf8B
+        mQEAAcwB/wHMAQABzAL/AQABzAEAATMBAAH/AQABZgEAAf8BAAGZAQABzAEzAgAB/wIzAQAB/wEzAWYB
+        AAH/ATMBmQEAAf8BMwHMAQAB/wEzAf8BAAH/AWYCAAH/AWYBMwEAAcwCZgEAAf8BZgGZAQAB/wFmAcwB
+        AAHMAWYB/wEAAf8BmQIAAf8BmQEzAQAB/wGZAWYBAAH/ApkBAAH/AZkBzAEAAf8BmQH/AQAB/wHMAgAB
+        /wHMATMBAAH/AcwBZgEAAf8BzAGZAQAB/wLMAQAB/wHMAf8BAAL/ATMBAAHMAf8BZgEAAv8BmQEAAv8B
+        zAEAAmYB/wEAAWYB/wFmAQABZgL/AQAB/wJmAQAB/wFmAf8BAAL/AWYBAAEhAQABpQEAA18BAAN3AQAD
+        hgEAA5YBAAPLAQADsgEAA9cBAAPdAQAD4wEAA+oBAAPxAQAD+AEAAfAB+wH/AQABpAKgAQADgAMAAf8C
+        AAH/AwAC/wEAAf8DAAH/AQAB/wEAAv8CAAP/AQAB8QK8A/AB8QPyBvMwAAHyArwF8APxA/IC8TAAAe4C
+        8AHxAfAB8QHwBPIE8wHyMAABBwTxAvAD8gHxA/IBGwHxMAAB7gfwAvEB8gHxAfIB8wLyMAAB8wHuA7wE
+        8AHxAfIB8QHyAfMC8jAAAfED8AG8AvAG8QHyAvEwAAHxA/ABvATwAfEB8AHxBPIwAAHzA7wI8ATyMAAB
+        8QLwAbwH8AHxAfAD8jAAAfMCvArwAfEB8gHxMAAB8wK8DfAwAAHxAbwO8DAAAfQBvALwAfEK8AG8MAAB
+        9AG8AfEC8AHxAfIB8QHwAvEB8AG8AvABvDAAAfEC8AG8AfAB8QjwAfEBvDAAAUIBTQE+BwABPgMAASgD
+        AAFAAwABEAMAAQEBAAEBBQABgBcAA/+XAAs=
+</value>
+  </data>
+  <data name="lblBillAmount.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 23</value>
+  </data>
+  <data name="lblEmiDate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 23</value>
+  </data>
+  <data name="&gt;&gt;lblRupees.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;Label7.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Label2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;lblBillVeichleNo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label6.Name" xml:space="preserve">
+    <value>Label6</value>
+  </data>
+  <data name="Label11.Location" type="System.Drawing.Point, System.Drawing">
+    <value>66, 178</value>
+  </data>
+  <data name="lblBillDate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>844, 109</value>
+  </data>
+  <data name="&gt;&gt;lblBilTotalEmiNos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblBilTotalEmiNos.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;lblInWords2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Label3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label3.Name" xml:space="preserve">
+    <value>Label3</value>
+  </data>
+  <data name="&gt;&gt;Label10.Name" xml:space="preserve">
+    <value>Label10</value>
+  </data>
+  <data name="&gt;&gt;Label9.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblInWords2.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="Label7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>613, 312</value>
+  </data>
+  <data name="&gt;&gt;Label12.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>1058, 548</value>
+  </data>
+  <data name="Label8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 263</value>
+  </data>
+  <data name="&gt;&gt;Label12.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblRupees.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 23</value>
+  </data>
+  <data name="Label10.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;lblEmiDate.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="lblBillDate.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblBillVeichleNo.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="lblBillVeichleNo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 23</value>
+  </data>
+  <data name="lblInWords1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>762, 189</value>
+  </data>
+  <data name="&gt;&gt;lblBillLoanNo.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="Label9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>672, 216</value>
+  </data>
+  <data name="&gt;&gt;lblBillTotal.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblBillEmiNo.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="Label10.Location" type="System.Drawing.Point, System.Drawing">
+    <value>199, 216</value>
+  </data>
+  <data name="lblBillLoanNo.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;lblCustName.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="lblCustName.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;Label4.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;lblBillAmount.Name" xml:space="preserve">
+    <value>lblBillAmount</value>
+  </data>
+  <data name="&gt;&gt;Label11.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="lblBillEmiNo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 23</value>
+  </data>
+  <data name="Label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>311, 386</value>
+  </data>
+  <data name="&gt;&gt;Label6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblBilTotalEmiNos.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="lblCustName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 23</value>
+  </data>
+  <data name="lblInWords1.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;Label4.Name" xml:space="preserve">
+    <value>Label4</value>
+  </data>
+  <data name="&gt;&gt;lblBillAmount.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="lblEmiDate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>239, 352</value>
+  </data>
+  <data name="Label12.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="lblBillTotal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 23</value>
+  </data>
+  <data name="&gt;&gt;Label4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label5.Name" xml:space="preserve">
+    <value>Label5</value>
+  </data>
+  <data name="Label7.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="lblBilTotalEmiNos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 23</value>
+  </data>
+  <data name="lblInWords1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 23</value>
+  </data>
+  <data name="lblBillLoanNo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>42, 352</value>
+  </data>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, System.Private.CoreLib, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
+    <value>en</value>
+  </metadata>
+  <metadata name="ImageList1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ImageList2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+</root>

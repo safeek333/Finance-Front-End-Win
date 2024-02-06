@@ -25,6 +25,9 @@
     <Compile Update="frmNewPenality.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="frmPaymentBill.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="frmPaymentList.vb">
       <SubType>Form</SubType>
     </Compile>

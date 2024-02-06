@@ -22,18 +22,18 @@ Partial Class frmCollectEmiSingleCust
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As DataGridViewCellStyle = New DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As DataGridViewCellStyle = New DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As DataGridViewCellStyle = New DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As DataGridViewCellStyle = New DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As DataGridViewCellStyle = New DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As DataGridViewCellStyle = New DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As DataGridViewCellStyle = New DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As DataGridViewCellStyle = New DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As DataGridViewCellStyle = New DataGridViewCellStyle()
-        Dim DataGridViewCellStyle10 As DataGridViewCellStyle = New DataGridViewCellStyle()
-        Dim DataGridViewCellStyle11 As DataGridViewCellStyle = New DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle13 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle14 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle15 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle16 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle17 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle18 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle19 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle20 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle21 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle22 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle23 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle24 As DataGridViewCellStyle = New DataGridViewCellStyle()
         lblTitle = New Label()
         Label1 = New Label()
         dgCollectEmiSingleCust = New DataGridView()
@@ -49,6 +49,7 @@ Partial Class frmCollectEmiSingleCust
         emiBalance = New DataGridViewTextBoxColumn()
         emiPendingDays = New DataGridViewTextBoxColumn()
         emiPenalityAmt = New DataGridViewTextBoxColumn()
+        Button1 = New Button()
         CType(dgCollectEmiSingleCust, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -77,7 +78,7 @@ Partial Class frmCollectEmiSingleCust
         ' 
         dgCollectEmiSingleCust.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         dgCollectEmiSingleCust.Columns.AddRange(New DataGridViewColumn() {emiId, emiAmt, emiDate, finCharge, dicountOnFinCharge, emiStatus, emiPaidDate, emiPaymentRcvd, emiPaidAmt, emiBalance, emiPendingDays, emiPenalityAmt})
-        dgCollectEmiSingleCust.Dock = DockStyle.Fill
+        dgCollectEmiSingleCust.Dock = DockStyle.Top
         dgCollectEmiSingleCust.Location = New Point(0, 0)
         dgCollectEmiSingleCust.Name = "dgCollectEmiSingleCust"
         dgCollectEmiSingleCust.RowHeadersWidth = 51
@@ -89,8 +90,8 @@ Partial Class frmCollectEmiSingleCust
         ' emiId
         ' 
         emiId.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
-        DataGridViewCellStyle1.Font = New Font("Microsoft Sans Serif", 12.2F, FontStyle.Bold, GraphicsUnit.Point)
-        emiId.DefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle13.Font = New Font("Microsoft Sans Serif", 12.2F, FontStyle.Bold, GraphicsUnit.Point)
+        emiId.DefaultCellStyle = DataGridViewCellStyle13
         emiId.HeaderText = "EMI ID"
         emiId.MinimumWidth = 6
         emiId.Name = "emiId"
@@ -100,8 +101,8 @@ Partial Class frmCollectEmiSingleCust
         ' emiAmt
         ' 
         emiAmt.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
-        DataGridViewCellStyle2.Font = New Font("Microsoft Sans Serif", 12.2F, FontStyle.Bold, GraphicsUnit.Point)
-        emiAmt.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle14.Font = New Font("Microsoft Sans Serif", 12.2F, FontStyle.Bold, GraphicsUnit.Point)
+        emiAmt.DefaultCellStyle = DataGridViewCellStyle14
         emiAmt.HeaderText = "EMI AMOUNT"
         emiAmt.MinimumWidth = 6
         emiAmt.Name = "emiAmt"
@@ -111,8 +112,8 @@ Partial Class frmCollectEmiSingleCust
         ' emiDate
         ' 
         emiDate.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
-        DataGridViewCellStyle3.Font = New Font("Microsoft Sans Serif", 12.2F, FontStyle.Bold, GraphicsUnit.Point)
-        emiDate.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle15.Font = New Font("Microsoft Sans Serif", 12.2F, FontStyle.Bold, GraphicsUnit.Point)
+        emiDate.DefaultCellStyle = DataGridViewCellStyle15
         emiDate.HeaderText = "EMI DATE"
         emiDate.MinimumWidth = 6
         emiDate.Name = "emiDate"
@@ -122,8 +123,8 @@ Partial Class frmCollectEmiSingleCust
         ' finCharge
         ' 
         finCharge.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
-        DataGridViewCellStyle4.Font = New Font("Microsoft Sans Serif", 12.2F, FontStyle.Bold, GraphicsUnit.Point)
-        finCharge.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle16.Font = New Font("Microsoft Sans Serif", 12.2F, FontStyle.Bold, GraphicsUnit.Point)
+        finCharge.DefaultCellStyle = DataGridViewCellStyle16
         finCharge.HeaderText = "FIN. CHARGES"
         finCharge.MinimumWidth = 6
         finCharge.Name = "finCharge"
@@ -133,8 +134,8 @@ Partial Class frmCollectEmiSingleCust
         ' dicountOnFinCharge
         ' 
         dicountOnFinCharge.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
-        DataGridViewCellStyle5.Font = New Font("Microsoft Sans Serif", 12.2F, FontStyle.Bold, GraphicsUnit.Point)
-        dicountOnFinCharge.DefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle17.Font = New Font("Microsoft Sans Serif", 12.2F, FontStyle.Bold, GraphicsUnit.Point)
+        dicountOnFinCharge.DefaultCellStyle = DataGridViewCellStyle17
         dicountOnFinCharge.HeaderText = "DISCOUNT AMT"
         dicountOnFinCharge.MinimumWidth = 6
         dicountOnFinCharge.Name = "dicountOnFinCharge"
@@ -144,8 +145,8 @@ Partial Class frmCollectEmiSingleCust
         ' emiStatus
         ' 
         emiStatus.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
-        DataGridViewCellStyle6.Font = New Font("Microsoft Sans Serif", 12.2F, FontStyle.Bold, GraphicsUnit.Point)
-        emiStatus.DefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle18.Font = New Font("Microsoft Sans Serif", 12.2F, FontStyle.Bold, GraphicsUnit.Point)
+        emiStatus.DefaultCellStyle = DataGridViewCellStyle18
         emiStatus.HeaderText = "EMI STATUS"
         emiStatus.MinimumWidth = 6
         emiStatus.Name = "emiStatus"
@@ -155,8 +156,8 @@ Partial Class frmCollectEmiSingleCust
         ' emiPaidDate
         ' 
         emiPaidDate.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
-        DataGridViewCellStyle7.Font = New Font("Microsoft Sans Serif", 12.2F, FontStyle.Bold, GraphicsUnit.Point)
-        emiPaidDate.DefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle19.Font = New Font("Microsoft Sans Serif", 12.2F, FontStyle.Bold, GraphicsUnit.Point)
+        emiPaidDate.DefaultCellStyle = DataGridViewCellStyle19
         emiPaidDate.HeaderText = "LAST PAYMENT DATE"
         emiPaidDate.MinimumWidth = 6
         emiPaidDate.Name = "emiPaidDate"
@@ -165,8 +166,8 @@ Partial Class frmCollectEmiSingleCust
         ' 
         ' emiPaymentRcvd
         ' 
-        DataGridViewCellStyle8.Font = New Font("Microsoft Sans Serif", 12.0F, FontStyle.Bold, GraphicsUnit.Point)
-        emiPaymentRcvd.DefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle20.Font = New Font("Microsoft Sans Serif", 12.0F, FontStyle.Bold, GraphicsUnit.Point)
+        emiPaymentRcvd.DefaultCellStyle = DataGridViewCellStyle20
         emiPaymentRcvd.HeaderText = "PAYMENT RCVD"
         emiPaymentRcvd.MinimumWidth = 6
         emiPaymentRcvd.Name = "emiPaymentRcvd"
@@ -176,8 +177,8 @@ Partial Class frmCollectEmiSingleCust
         ' emiPaidAmt
         ' 
         emiPaidAmt.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
-        DataGridViewCellStyle9.Font = New Font("Microsoft Sans Serif", 12.2F, FontStyle.Bold, GraphicsUnit.Point)
-        emiPaidAmt.DefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle21.Font = New Font("Microsoft Sans Serif", 12.2F, FontStyle.Bold, GraphicsUnit.Point)
+        emiPaidAmt.DefaultCellStyle = DataGridViewCellStyle21
         emiPaidAmt.HeaderText = "EMI PAID AMT"
         emiPaidAmt.MinimumWidth = 6
         emiPaidAmt.Name = "emiPaidAmt"
@@ -187,8 +188,8 @@ Partial Class frmCollectEmiSingleCust
         ' emiBalance
         ' 
         emiBalance.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
-        DataGridViewCellStyle10.Font = New Font("Microsoft Sans Serif", 12.2F, FontStyle.Bold, GraphicsUnit.Point)
-        emiBalance.DefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle22.Font = New Font("Microsoft Sans Serif", 12.2F, FontStyle.Bold, GraphicsUnit.Point)
+        emiBalance.DefaultCellStyle = DataGridViewCellStyle22
         emiBalance.HeaderText = "EMI BALANCE"
         emiBalance.MinimumWidth = 6
         emiBalance.Name = "emiBalance"
@@ -198,8 +199,8 @@ Partial Class frmCollectEmiSingleCust
         ' emiPendingDays
         ' 
         emiPendingDays.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
-        DataGridViewCellStyle11.Font = New Font("Microsoft Sans Serif", 12.2F, FontStyle.Bold, GraphicsUnit.Point)
-        emiPendingDays.DefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle23.Font = New Font("Microsoft Sans Serif", 12.2F, FontStyle.Bold, GraphicsUnit.Point)
+        emiPendingDays.DefaultCellStyle = DataGridViewCellStyle23
         emiPendingDays.HeaderText = "PENDING DAYS"
         emiPendingDays.MinimumWidth = 6
         emiPendingDays.Name = "emiPendingDays"
@@ -209,19 +210,30 @@ Partial Class frmCollectEmiSingleCust
         ' emiPenalityAmt
         ' 
         emiPenalityAmt.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
-        DataGridViewCellStyle12.Font = New Font("Microsoft Sans Serif", 12.2F, FontStyle.Bold, GraphicsUnit.Point)
-        emiPenalityAmt.DefaultCellStyle = DataGridViewCellStyle12
+        DataGridViewCellStyle24.Font = New Font("Microsoft Sans Serif", 12.2F, FontStyle.Bold, GraphicsUnit.Point)
+        emiPenalityAmt.DefaultCellStyle = DataGridViewCellStyle24
         emiPenalityAmt.HeaderText = "PENALITY AMT"
         emiPenalityAmt.MinimumWidth = 6
         emiPenalityAmt.Name = "emiPenalityAmt"
         emiPenalityAmt.ReadOnly = True
         emiPenalityAmt.Width = 126
         ' 
+        ' Button1
+        ' 
+        Button1.Font = New Font("Segoe UI", 12.0F, FontStyle.Bold, GraphicsUnit.Point)
+        Button1.Location = New Point(0, 456)
+        Button1.Name = "Button1"
+        Button1.Size = New Size(272, 41)
+        Button1.TabIndex = 9
+        Button1.Text = "Export As PDF"
+        Button1.UseVisualStyleBackColor = True
+        ' 
         ' frmCollectEmiSingleCust
         ' 
         AutoScaleDimensions = New SizeF(8.0F, 20.0F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1413, 450)
+        ClientSize = New Size(1413, 572)
+        Controls.Add(Button1)
         Controls.Add(dgCollectEmiSingleCust)
         Controls.Add(Label1)
         Controls.Add(lblTitle)
@@ -249,4 +261,5 @@ Partial Class frmCollectEmiSingleCust
     Friend WithEvents emiBalance As DataGridViewTextBoxColumn
     Friend WithEvents emiPendingDays As DataGridViewTextBoxColumn
     Friend WithEvents emiPenalityAmt As DataGridViewTextBoxColumn
+    Friend WithEvents Button1 As Button
 End Class

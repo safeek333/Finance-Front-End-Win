@@ -21,8 +21,8 @@ Public Class mdiFinance
     End Sub
 
     Private Sub mdiFinance_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'frmLogin.Show()
-        'frmLogin.Focus()
+        frmLogin.Show()
+        frmLogin.Focus()
 
     End Sub
 
