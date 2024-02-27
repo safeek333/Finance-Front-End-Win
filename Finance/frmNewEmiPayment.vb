@@ -14,8 +14,85 @@ Public Class frmNewEmiPayment
         End If
     End Sub
 
+    Public Sub GetNumber2Words(URL As Object)
+        Try
+            Dim myReq As HttpWebRequest
+            Dim myResp As HttpWebResponse
+            Dim myReader As StreamReader
+            myReq = HttpWebRequest.Create(URL)
+            myReq.Method = "GET"
+            myResp = myReq.GetResponse
+            myReader = New System.IO.StreamReader(myResp.GetResponseStream)
+            Dim rec = myReader.ReadToEnd
+            'MsgBox("Number 2 Word :  " & rec)
+            txtAmtInWords.Text = rec
+            'SplitCustRecToView(rec)
+            'txtLoanNum.ReadOnly = True
+        Catch ex As Exception
+            MsgBox("Error: " & ex.Message)
+        End Try
+
+    End Sub
+
+    Public Sub GetEmiDate(URL As Object)
+        Try
+            Dim myReq As HttpWebRequest
+            Dim myResp As HttpWebResponse
+            Dim myReader As StreamReader
+            myReq = HttpWebRequest.Create(URL)
+            myReq.Method = "GET"
+            myResp = myReq.GetResponse
+            myReader = New System.IO.StreamReader(myResp.GetResponseStream)
+            Dim rec = myReader.ReadToEnd
+            'MsgBox(URL & " / emi date :  " & rec)
+            dtEmiDate.Value = rec
+            'SplitCustRecToView(rec)
+            'txtLoanNum.ReadOnly = True
+        Catch ex As Exception
+            'MsgBox("Error: " & ex.Message)
+        End Try
+
+    End Sub
+
+    Public Function isLoanClosed(loanNumber As Long)
+        Try
+            Dim URL As Object
+            URL = "http://localhost:9091/loan/status/" & loanNumber
+            Dim myReq As HttpWebRequest
+            Dim myResp As HttpWebResponse
+            Dim myReader As StreamReader
+            myReq = HttpWebRequest.Create(URL)
+            myReq.Method = "GET"
+            myResp = myReq.GetResponse
+            myReader = New System.IO.StreamReader(myResp.GetResponseStream)
+            Dim rec = myReader.ReadToEnd
+            'MsgBox(URL & " / emi date :  " & rec)
+            If (rec = "Closed") Then
+                isLoanClosed = True
+            Else
+                isLoanClosed = False
+            End If
+            'SplitCustRecToView(rec)
+            'txtLoanNum.ReadOnly = True
+        Catch ex As Exception
+            'MsgBox("Error: " & ex.Message)
+        End Try
+
+    End Function
+
     Public Sub MakePayment(URL As Object, reqString As String)
         Try
+            If Not IsNumeric(txtLoanNum.Text) Then
+                MsgBox("Loan Number Required")
+                Return
+            Else
+                If isLoanClosed(CLng(txtLoanNum.Text)) Then
+                    MsgBox("Loan Closed. Cannnot Proceed.")
+                    Return
+                End If
+            End If
+
+
             Dim myReq As HttpWebRequest
             Dim myResp As HttpWebResponse
             Dim myReader As StreamReader
@@ -40,6 +117,16 @@ Public Class frmNewEmiPayment
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+
+        If Not IsNumeric(txtLoanNum.Text) Then
+            MsgBox("Loan Number Required")
+            Return
+        Else
+            If isLoanClosed(CLng(txtLoanNum.Text)) Then
+                MsgBox("Loan Closed. Cannnot Proceed.")
+                Return
+            End If
+        End If
         If IsNumeric(txtLoanNum.Text) Then
             txtLoanNum.Text = FormatNumber(CInt(txtLoanNum.Text), 0,,, vbFalse)
             If Not IsNumeric(txtEmiPaymentAmt.Text) Or CDbl(txtEmiPaymentAmt.Text) <= 0 Then
@@ -57,13 +144,50 @@ Public Class frmNewEmiPayment
                 Return
             End If
 
-            Call MakePayment("http://localhost:9091/loan/paymentnew",
-                   "{""loanNumber"":""" & txtLoanNum.Text &
+            validateEmiId()
+            validateEmiDate()
+
+            Dim receipt As String
+
+            Dim request As String
+
+
+            If frmPaymentBill.Visible And (Me.cboPaymentType.SelectedItem = "CUST PAY IN") Then
+                receipt = "{""receiptDate"":""" & frmPaymentBill.lblBillDate.Text &
+                """,""receiptCustAddr"":""" & frmPaymentBill.lblCustName.Text &
+                """,""receiptAmt"":""" & frmPaymentBill.lblRupees.Text &
+                """,""receiptAmtInWords"":""" & frmPaymentBill.lblInWords2.Text &
+                """,""receiptVeichleNum"":""" & frmPaymentBill.lblBillVeichleNo.Text &
+                """,""receiptLoanNum"":""" & frmPaymentBill.lblBillLoanNo.Text &
+                """,""receiptEmiDate"":""" & frmPaymentBill.lblEmiDate.Text &
+                """,""receiptEmiId"":""" & frmPaymentBill.lblBillEmiNo.Text &
+                """,""receiptEmiAmt"":""" & frmPaymentBill.lblBillAmount.Text &
+                """,""receiptTotal"":""" & frmPaymentBill.lblBillTotal.Text &
+                """,""receiptCollSign"":""" & "Root" &
+                """}"
+
+                request = "{""loanNumber"":""" & txtLoanNum.Text &
                    """,""paymentDate"":""" & dtEmiPaymentDate.Value &
                    """,""paymentAmt"":""" & txtEmiPaymentAmt.Text &
                    """,""paymentType"":""" & cboPaymentType.SelectedItem &
                    """,""paymentDesc"":""" & txtPaymentDesc.Text &
-                   """}")
+                   """,""paymentReceipt"":" & receipt &
+                   "}"
+            Else
+                request = "{""loanNumber"":""" & txtLoanNum.Text &
+                   """,""paymentDate"":""" & dtEmiPaymentDate.Value &
+                   """,""paymentAmt"":""" & txtEmiPaymentAmt.Text &
+                   """,""paymentType"":""" & cboPaymentType.SelectedItem &
+                   """,""paymentDesc"":""" & txtPaymentDesc.Text &
+                   """}"
+            End If
+
+
+            MsgBox(request)
+
+            Call MakePayment("http://localhost:9091/loan/paymentnew", request)
+
+
         Else
             MsgBox("Invalid Loan Number")
         End If
@@ -73,6 +197,7 @@ Public Class frmNewEmiPayment
 
     Private Sub frmNewEmiPayment_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cboPaymentType.SelectedIndex = 0
+        cboEmiId.SelectedIndex = 0
         txtPaymentDesc.Text = "RECEIVED FROM CUSTOMER FOR EMI"
         txtEmiPaymentAmt.Focus()
 
@@ -90,12 +215,42 @@ Public Class frmNewEmiPayment
     End Sub
 
     Private Sub UpdateBill()
-        'Try
-        'frmPaymentBill.Show()
-        'frmPaymentBill.UpdateBillContent(Me.dtEmiPaymentDate.Value.ToString(), Me.txtCustAddr.Text, Me.txtEmiAmount.Text, "Yet to 1", "Yet to 2", Me.txtLoanNum.Text, "Yet to 3", "Y24", Me.txtEmiMonths.Text, Me.txtEmiPaymentAmt.Text, Me.txtEmiPaymentAmt.Text)
-        'Catch ex As Exception
+        Try
+            If Me.cboPaymentType.SelectedItem = "CUST PAY IN" Then
+                frmPaymentBill.Show()
+                Try
+                    GetNumber2Words("http://localhost:9091/loan/n2w/" & CLng(Me.txtEmiPaymentAmt.Text))
+                Catch e As Exception
 
-        'End Try
+                End Try
+
+                Try
+
+                    GetEmiDate("http://localhost:9091/loan/emidate/" & CLng(Me.txtLoanNum.Text) & "/" & CInt(Me.cboEmiId.SelectedItem))
+
+                Catch ex As Exception
+
+                End Try
+
+                frmPaymentBill.UpdateBillContent(
+                    Me.dtEmiPaymentDate.Value.ToString(),
+                    Me.txtCustAddr.Text,
+                    Me.txtEmiPaymentAmt.Text,
+                    " **** ",
+                    Me.txtAmtInWords.Text,
+                    Me.txtLoanNum.Text,
+                    Me.dtEmiDate.Value,
+                    Me.cboEmiId.SelectedItem,
+                    Me.txtEmiMonths.Text,
+                    Me.txtEmiPaymentAmt.Text,
+                    Me.txtEmiPaymentAmt.Text,
+                    Me.txtVeichleNum.Text)
+            Else
+                frmPaymentBill.Hide()
+            End If
+        Catch ex As Exception
+
+        End Try
     End Sub
     Public Sub GetLoanDetail(URL As Object, reqString As String)
         Try
@@ -144,7 +299,7 @@ Public Class frmNewEmiPayment
             End If
 
             If I = 1 Then
-                'txtVeichleNum.Text = v
+                txtVeichleNum.Text = v
             End If
             If I = 2 Then
                 txtCustAddr.Text = v
@@ -160,6 +315,7 @@ Public Class frmNewEmiPayment
             End If
             If I = 6 Then
                 txtEmiAmount.Text = v
+                txtEmiPaymentAmt.Text = v
             End If
             If I = 7 Then
                 txtEmiMonths.Text = v
@@ -197,7 +353,9 @@ Public Class frmNewEmiPayment
     End Sub
 
     Private Sub dtEmiPaymentDate_ValueChanged(sender As Object, e As EventArgs) Handles dtEmiPaymentDate.ValueChanged
+        validateEmiDate()
         UpdateBill()
+
     End Sub
 
     Private Sub txtEmiPaymentAmt_TextChanged(sender As Object, e As EventArgs) Handles txtEmiPaymentAmt.TextChanged
@@ -207,4 +365,47 @@ Public Class frmNewEmiPayment
     Private Sub cboLoanStatus_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboLoanStatus.SelectedIndexChanged
         UpdateBill()
     End Sub
+
+    Private Sub txtAmtInWords_TextChanged(sender As Object, e As EventArgs) Handles txtAmtInWords.TextChanged
+
+    End Sub
+
+    Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
+
+    End Sub
+
+    Private Sub cboEmiId_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboEmiId.SelectedIndexChanged
+        validateEmiId()
+        validateEmiDate()
+        UpdateBill()
+    End Sub
+
+    Private Sub cboPaymentType_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboPaymentType.SelectedIndexChanged
+        UpdateBill()
+    End Sub
+
+    Private Sub dtEmiDate_ValueChanged(sender As Object, e As EventArgs) Handles dtEmiDate.ValueChanged
+        validateEmiDate()
+    End Sub
+
+    Private Sub validateEmiDate()
+        If Me.cboPaymentType.SelectedItem = "CUST PAY IN" Then
+            If dtEmiDate.Value > DateAdd("d", 1, dtLoanClose.Value) Then
+                MsgBox("Emi Date should not greater then Loan Close Date")
+                dtEmiDate.Value = DateAdd("d", 1, dtLoanClose.Value)
+                cboEmiId.SelectedItem = txtEmiMonths.Text
+            End If
+        End If
+    End Sub
+
+    Private Sub validateEmiId()
+        If Me.cboPaymentType.SelectedItem = "CUST PAY IN" Then
+            If (CInt(cboEmiId.SelectedItem) > CInt(txtEmiMonths.Text)) Then
+                MsgBox("Emi Id should not greater then Loan Emi Months")
+                cboEmiId.SelectedIndex = 1
+            End If
+
+        End If
+    End Sub
+
 End Class

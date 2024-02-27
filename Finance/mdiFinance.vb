@@ -23,6 +23,8 @@ Public Class mdiFinance
     Private Sub mdiFinance_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         frmLogin.Show()
         frmLogin.Focus()
+        frmLogin.UsernameTextBox.Text = "root"
+        frmLogin.PasswordTextBox.Text = "root"
 
     End Sub
 
@@ -84,5 +86,14 @@ Public Class mdiFinance
 
     Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
         End
+    End Sub
+
+    Private Sub ViewAllReceiptsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ViewAllReceiptsToolStripMenuItem.Click
+        frmReceiptList.OpenAllPenalityList()
+
+    End Sub
+
+    Private Sub GenerateLoanSummaryToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GenerateLoanSummaryToolStripMenuItem.Click
+        frmGenLoanSummary.Show()
     End Sub
 End Class

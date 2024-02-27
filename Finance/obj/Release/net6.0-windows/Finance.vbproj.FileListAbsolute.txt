@@ -47,3 +47,5 @@ C:\Users\safiya\source\repos\Finance\Finance\obj\Release\net6.0-windows\ta\Finan
 C:\Users\safiya\source\repos\Finance\Finance\bin\Release\net6.0-windows\en\Finance.resources.dll
 C:\Users\safiya\source\repos\Finance\Finance\obj\Release\net6.0-windows\Finance.frmPaymentBill.en.resources
 C:\Users\safiya\source\repos\Finance\Finance\obj\Release\net6.0-windows\en\Finance.resources.dll
+C:\Users\safiya\source\repos\Finance\Finance\obj\Release\net6.0-windows\Finance.frmReceiptList.resources
+C:\Users\safiya\source\repos\Finance\Finance\obj\Release\net6.0-windows\Finance.frmGenLoanSummary.resources

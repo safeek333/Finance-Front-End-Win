@@ -16,6 +16,9 @@
           "Finance.dll": {}
         },
         "resources": {
+          "en/Finance.resources.dll": {
+            "locale": "en"
+          },
           "ta/Finance.resources.dll": {
             "locale": "ta"
           }

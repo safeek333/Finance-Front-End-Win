@@ -34,6 +34,9 @@ Partial Class mdiFinance
         PaymentToolStripMenuItem = New ToolStripMenuItem()
         PaymentEntryToolStripMenuItem = New ToolStripMenuItem()
         ViewPayToolStripMenuItem = New ToolStripMenuItem()
+        ToolStripMenuItem3 = New ToolStripMenuItem()
+        ViewLoanReceiptsToolStripMenuItem = New ToolStripMenuItem()
+        ViewAllReceiptsToolStripMenuItem = New ToolStripMenuItem()
         ToolStripMenuItem1 = New ToolStripMenuItem()
         AddNewPenalityToolStripMenuItem = New ToolStripMenuItem()
         ViewPenalityMasterToolStripMenuItem = New ToolStripMenuItem()
@@ -60,6 +63,7 @@ Partial Class mdiFinance
         AboutToolStripMenuItem = New ToolStripMenuItem()
         FileSystemWatcher1 = New IO.FileSystemWatcher()
         FileSystemWatcher2 = New IO.FileSystemWatcher()
+        GenerateLoanSummaryToolStripMenuItem = New ToolStripMenuItem()
         MenuStrip1.SuspendLayout()
         CType(FileSystemWatcher1, ComponentModel.ISupportInitialize).BeginInit()
         CType(FileSystemWatcher2, ComponentModel.ISupportInitialize).BeginInit()
@@ -90,7 +94,7 @@ Partial Class mdiFinance
         ' 
         ' LoanToolStripMenuItem
         ' 
-        LoanToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {NewLoanRegistrationToolStripMenuItem, EditNewLoanRegistrationToolStripMenuItem, ToolStripSeparator2, EMIDetailsToolStripMenuItem, PaymentToolStripMenuItem, ToolStripMenuItem1, ToolStripSeparator3, CloseLoanToolStripMenuItem, ToolStripSeparator1, ReportsToolStripMenuItem})
+        LoanToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {NewLoanRegistrationToolStripMenuItem, EditNewLoanRegistrationToolStripMenuItem, ToolStripSeparator2, EMIDetailsToolStripMenuItem, PaymentToolStripMenuItem, ToolStripMenuItem3, ToolStripMenuItem1, ToolStripSeparator3, CloseLoanToolStripMenuItem, ToolStripSeparator1, ReportsToolStripMenuItem})
         LoanToolStripMenuItem.Name = "LoanToolStripMenuItem"
         LoanToolStripMenuItem.Size = New Size(55, 24)
         LoanToolStripMenuItem.Text = "Loan"
@@ -144,6 +148,25 @@ Partial Class mdiFinance
         ViewPayToolStripMenuItem.Size = New Size(250, 26)
         ViewPayToolStripMenuItem.Text = "View Loan Payments"
         ' 
+        ' ToolStripMenuItem3
+        ' 
+        ToolStripMenuItem3.DropDownItems.AddRange(New ToolStripItem() {ViewLoanReceiptsToolStripMenuItem, ViewAllReceiptsToolStripMenuItem})
+        ToolStripMenuItem3.Name = "ToolStripMenuItem3"
+        ToolStripMenuItem3.Size = New Size(273, 26)
+        ToolStripMenuItem3.Text = "Payment Receipt"
+        ' 
+        ' ViewLoanReceiptsToolStripMenuItem
+        ' 
+        ViewLoanReceiptsToolStripMenuItem.Name = "ViewLoanReceiptsToolStripMenuItem"
+        ViewLoanReceiptsToolStripMenuItem.Size = New Size(220, 26)
+        ViewLoanReceiptsToolStripMenuItem.Text = "View Loan Receipts"
+        ' 
+        ' ViewAllReceiptsToolStripMenuItem
+        ' 
+        ViewAllReceiptsToolStripMenuItem.Name = "ViewAllReceiptsToolStripMenuItem"
+        ViewAllReceiptsToolStripMenuItem.Size = New Size(220, 26)
+        ViewAllReceiptsToolStripMenuItem.Text = "View All Receipts"
+        ' 
         ' ToolStripMenuItem1
         ' 
         ToolStripMenuItem1.DropDownItems.AddRange(New ToolStripItem() {AddNewPenalityToolStripMenuItem, ViewPenalityMasterToolStripMenuItem})
@@ -154,13 +177,13 @@ Partial Class mdiFinance
         ' AddNewPenalityToolStripMenuItem
         ' 
         AddNewPenalityToolStripMenuItem.Name = "AddNewPenalityToolStripMenuItem"
-        AddNewPenalityToolStripMenuItem.Size = New Size(224, 26)
+        AddNewPenalityToolStripMenuItem.Size = New Size(184, 26)
         AddNewPenalityToolStripMenuItem.Text = "Add New AFC"
         ' 
         ' ViewPenalityMasterToolStripMenuItem
         ' 
         ViewPenalityMasterToolStripMenuItem.Name = "ViewPenalityMasterToolStripMenuItem"
-        ViewPenalityMasterToolStripMenuItem.Size = New Size(224, 26)
+        ViewPenalityMasterToolStripMenuItem.Size = New Size(184, 26)
         ViewPenalityMasterToolStripMenuItem.Text = "View All AFC"
         ' 
         ' ToolStripSeparator3
@@ -181,7 +204,7 @@ Partial Class mdiFinance
         ' 
         ' ReportsToolStripMenuItem
         ' 
-        ReportsToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {AllLoanDetailsToolStripMenuItem})
+        ReportsToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {AllLoanDetailsToolStripMenuItem, GenerateLoanSummaryToolStripMenuItem})
         ReportsToolStripMenuItem.Name = "ReportsToolStripMenuItem"
         ReportsToolStripMenuItem.Size = New Size(273, 26)
         ReportsToolStripMenuItem.Text = "Loan Reports"
@@ -189,7 +212,7 @@ Partial Class mdiFinance
         ' AllLoanDetailsToolStripMenuItem
         ' 
         AllLoanDetailsToolStripMenuItem.Name = "AllLoanDetailsToolStripMenuItem"
-        AllLoanDetailsToolStripMenuItem.Size = New Size(232, 26)
+        AllLoanDetailsToolStripMenuItem.Size = New Size(254, 26)
         AllLoanDetailsToolStripMenuItem.Text = "View All Loan Details"
         ' 
         ' CustomerToolStripMenuItem
@@ -300,6 +323,12 @@ Partial Class mdiFinance
         FileSystemWatcher2.EnableRaisingEvents = True
         FileSystemWatcher2.SynchronizingObject = Me
         ' 
+        ' GenerateLoanSummaryToolStripMenuItem
+        ' 
+        GenerateLoanSummaryToolStripMenuItem.Name = "GenerateLoanSummaryToolStripMenuItem"
+        GenerateLoanSummaryToolStripMenuItem.Size = New Size(254, 26)
+        GenerateLoanSummaryToolStripMenuItem.Text = "Generate Loan Summary"
+        ' 
         ' mdiFinance
         ' 
         AutoScaleDimensions = New SizeF(25F, 46F)
@@ -358,4 +387,8 @@ Partial Class mdiFinance
     Friend WithEvents ViewPenalityMasterToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents UserManualToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AboutToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem3 As ToolStripMenuItem
+    Friend WithEvents ViewLoanReceiptsToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ViewAllReceiptsToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents GenerateLoanSummaryToolStripMenuItem As ToolStripMenuItem
 End Class

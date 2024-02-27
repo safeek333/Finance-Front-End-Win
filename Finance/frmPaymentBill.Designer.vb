@@ -33,11 +33,14 @@ Partial Class frmPaymentBill
         lblBillLoanNo = New Label()
         lblEmiDate = New Label()
         lblBillEmiNo = New Label()
-        lblBilTotalEmiNos = New Label()
         lblBillAmount = New Label()
         lblBillTotal = New Label()
         ImageList1 = New ImageList(components)
         ImageList2 = New ImageList(components)
+        Label1 = New Label()
+        btnBillPrint = New Button()
+        PrintDocument1 = New Printing.PrintDocument()
+        lblBillNo = New Label()
         SuspendLayout()
         ' 
         ' lblBillDate
@@ -103,13 +106,6 @@ Partial Class frmPaymentBill
         lblBillEmiNo.ForeColor = SystemColors.WindowText
         lblBillEmiNo.Name = "lblBillEmiNo"
         ' 
-        ' lblBilTotalEmiNos
-        ' 
-        resources.ApplyResources(lblBilTotalEmiNos, "lblBilTotalEmiNos")
-        lblBilTotalEmiNos.BackColor = Color.Transparent
-        lblBilTotalEmiNos.ForeColor = SystemColors.WindowText
-        lblBilTotalEmiNos.Name = "lblBilTotalEmiNos"
-        ' 
         ' lblBillAmount
         ' 
         resources.ApplyResources(lblBillAmount, "lblBillAmount")
@@ -138,22 +134,49 @@ Partial Class frmPaymentBill
         ImageList2.TransparentColor = Color.Transparent
         ImageList2.Images.SetKeyName(0, "bill.png")
         ' 
+        ' Label1
+        ' 
+        resources.ApplyResources(Label1, "Label1")
+        Label1.BackColor = Color.Transparent
+        Label1.ForeColor = SystemColors.WindowText
+        Label1.Name = "Label1"
+        ' 
+        ' btnBillPrint
+        ' 
+        resources.ApplyResources(btnBillPrint, "btnBillPrint")
+        btnBillPrint.ForeColor = SystemColors.WindowText
+        btnBillPrint.Name = "btnBillPrint"
+        btnBillPrint.UseVisualStyleBackColor = True
+        ' 
+        ' PrintDocument1
+        ' 
+        ' 
+        ' lblBillNo
+        ' 
+        resources.ApplyResources(lblBillNo, "lblBillNo")
+        lblBillNo.BackColor = Color.Transparent
+        lblBillNo.ForeColor = Color.Black
+        lblBillNo.Name = "lblBillNo"
+        ' 
         ' frmPaymentBill
         ' 
+        AcceptButton = btnBillPrint
         resources.ApplyResources(Me, "$this")
         AutoScaleMode = AutoScaleMode.Font
+        Controls.Add(lblBillNo)
+        Controls.Add(lblInWords2)
+        Controls.Add(lblCustName)
+        Controls.Add(btnBillPrint)
+        Controls.Add(Label1)
+        Controls.Add(lblBillEmiNo)
         Controls.Add(lblBillDate)
         Controls.Add(lblBillTotal)
         Controls.Add(lblBillAmount)
-        Controls.Add(lblBilTotalEmiNos)
-        Controls.Add(lblBillEmiNo)
         Controls.Add(lblEmiDate)
         Controls.Add(lblBillLoanNo)
         Controls.Add(lblBillVeichleNo)
-        Controls.Add(lblInWords2)
         Controls.Add(lblInWords1)
         Controls.Add(lblRupees)
-        Controls.Add(lblCustName)
         ForeColor = SystemColors.Window
         Name = "frmPaymentBill"
         ResumeLayout(False)
@@ -168,9 +191,12 @@ Partial Class frmPaymentBill
     Friend WithEvents lblBillLoanNo As Label
     Friend WithEvents lblEmiDate As Label
     Friend WithEvents lblBillEmiNo As Label
-    Friend WithEvents lblBilTotalEmiNos As Label
     Friend WithEvents lblBillAmount As Label
     Friend WithEvents lblBillTotal As Label
     Friend WithEvents ImageList1 As ImageList
     Friend WithEvents ImageList2 As ImageList
+    Friend WithEvents Label1 As Label
+    Friend WithEvents btnBillPrint As Button
+    Friend WithEvents PrintDocument1 As Printing.PrintDocument
+    Friend WithEvents lblBillNo As Label
 End Class
