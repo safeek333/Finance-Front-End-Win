@@ -224,7 +224,7 @@
     <value>347, 328</value>
   </data>
   <data name="lblBillEmiNo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 33</value>
+    <value>125, 30</value>
   </data>
   <data name="lblBillEmiNo.Text" xml:space="preserve">
     <value>NA</value>
@@ -236,7 +236,7 @@
     <value>495, 329</value>
   </data>
   <data name="lblBillAmount.Size" type="System.Drawing.Size, System.Drawing">
-    <value>127, 38</value>
+    <value>127, 29</value>
   </data>
   <data name="lblBillAmount.Text" xml:space="preserve">
     <value>BILL AMT</value>
@@ -264,7 +264,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAEZTeXN0ZW0uV2luZG93cy5Gb3JtcywgQ3VsdHVyZT1uZXV0cmFs
         LCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5BQEAAAAmU3lzdGVtLldpbmRvd3MuRm9ybXMu
         SW1hZ2VMaXN0U3RyZWFtZXIBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAA4AcAAAJNU0Z0AUkBTAMBAQAB
-        tAEBAbQBAQEQAQABEAEABP8BCQEACP8BQgFNATYBBAYAATYBBAIAASgDAAFAAwABEAMAAQEBAAEIBgAB
+        vAEBAbwBAQEQAQABEAEABP8BCQEACP8BQgFNATYBBAYAATYBBAIAASgDAAFAAwABEAMAAQEBAAEIBgAB
         BBgAAYACAAGAAwACgAEAAYADAAGAAQABgAEAAoACAAPAAQABwAHcAcABAAHwAcoBpgEAATMFAAEzAQAB
         MwEAATMBAAIzAgADFgEAAxwBAAMiAQADKQEAA1UBAANNAQADQgEAAzkBAAGAAXwB/wEAAlAB/wEAAZMB
         AAHWAQAB/wHsAcwBAAHGAdYB7wEAAdYC5wEAAZABqQGtAgAB/wEzAwABZgMAAZkDAAHMAgABMwMAAjMC
@@ -305,7 +305,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAEZTeXN0ZW0uV2luZG93cy5Gb3JtcywgQ3VsdHVyZT1uZXV0cmFs
         LCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5BQEAAAAmU3lzdGVtLldpbmRvd3MuRm9ybXMu
         SW1hZ2VMaXN0U3RyZWFtZXIBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAA4AcAAAJNU0Z0AUkBTAMBAQAB
-        uAEBAbgBAQEQAQABEAEABP8BCQEACP8BQgFNATYBBAYAATYBBAIAASgDAAFAAwABEAMAAQEBAAEIBgAB
+        wAEBAcABAQEQAQABEAEABP8BCQEACP8BQgFNATYBBAYAATYBBAIAASgDAAFAAwABEAMAAQEBAAEIBgAB
         BBgAAYACAAGAAwACgAEAAYADAAGAAQABgAEAAoACAAPAAQABwAHcAcABAAHwAcoBpgEAATMFAAEzAQAB
         MwEAATMBAAIzAgADFgEAAxwBAAMiAQADKQEAA1UBAANNAQADQgEAAzkBAAGAAXwB/wEAAlAB/wEAAZMB
         AAHWAQAB/wHsAcwBAAHGAdYB7wEAAdYC5wEAAZABqQGtAgAB/wEzAwABZgMAAZkDAAHMAgABMwMAAjMC
@@ -379,14 +379,47 @@
   <data name="lblBillNo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="lblBillNo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>57, 124</value>
-  </data>
   <data name="lblBillNo.Size" type="System.Drawing.Size, System.Drawing">
     <value>89, 33</value>
   </data>
-  <data name="lblBillNo.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
+  <data name="lblAhc.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Courier New, 12pt</value>
+  </data>
+  <data name="lblAhc.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblAhc.Location" type="System.Drawing.Point, System.Drawing">
+    <value>347, 354</value>
+  </data>
+  <data name="lblAhc.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 30</value>
+  </data>
+  <data name="lblAhc.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="lblAhc.Text" xml:space="preserve">
+    <value>AHC</value>
+  </data>
+  <data name="lblAhcAmt.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Courier New, 10.8pt</value>
+  </data>
+  <data name="lblAhcAmt.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblAhcAmt.Location" type="System.Drawing.Point, System.Drawing">
+    <value>497, 355</value>
+  </data>
+  <data name="lblAhcAmt.Size" type="System.Drawing.Size, System.Drawing">
+    <value>127, 20</value>
+  </data>
+  <data name="lblAhcAmt.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="lblAhcAmt.Text" xml:space="preserve">
+    <value>AHC AMT</value>
+  </data>
+  <data name="lblAhcAmt.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
   </data>
   <data name="$this.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

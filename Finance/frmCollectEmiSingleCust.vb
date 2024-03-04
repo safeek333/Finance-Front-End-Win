@@ -63,7 +63,7 @@ Public Class frmCollectEmiSingleCust
 
 
                 dgCollectEmiSingleCust.Rows.Insert(J, New String() {MyArray(1), MyArray(2), MyArray(3), MyArray(4), MyArray(5), MyArray(6), MyArray(7),
-                                               MyArray(8), MyArray(9), MyArray(10), MyArray(17), FormatNumber(MyArray(18), 2)})
+                                               MyArray(8), MyArray(9), MyArray(10), MyArray(17), FormatNumber(MyArray(18), 2), FormatNumber(MyArray(19), 2)})
                 'MyArray(9), MyArray(10), MyArray(11), MyArray(12), MyArray(13), MyArray(14), MyArray(15), 
 
 
@@ -99,7 +99,7 @@ Public Class frmCollectEmiSingleCust
         Dim pdfTable As New PdfPTable(dgCollectEmiSingleCust.ColumnCount)
         pdfTable.DefaultCell.Padding = 3
 
-        Dim widths As Single() = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+        Dim widths As Single() = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
 
         Dim j As Integer = 0
         For Each column As DataGridViewColumn In dgCollectEmiSingleCust.Columns

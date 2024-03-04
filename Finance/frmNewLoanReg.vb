@@ -175,7 +175,7 @@ Public Class frmNewLoanReg
             myResp = myReq.GetResponse
             myReader = New System.IO.StreamReader(myResp.GetResponseStream)
             Dim rec = myReader.ReadToEnd
-            MsgBox(URL & " / loan status :  " & rec)
+            'MsgBox(URL & " / loan status :  " & rec)
             If (rec = "Closed") Then
                 isLoanClosed = True
             Else
@@ -190,13 +190,17 @@ Public Class frmNewLoanReg
     End Function
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
-        If Not IsNumeric(txtLoanNum.Text) Then
-            MsgBox("Loan Number Required")
-            Return
-        Else
-            If isLoanClosed(CLng(txtLoanNum.Text)) Then
-                MsgBox("Loan Closed. Cannnot Proceed.")
+        If btnSave.Text = "Update" Then
+
+
+            If Not IsNumeric(txtLoanNum.Text) Then
+                MsgBox("Loan Number Required")
                 Return
+            Else
+                If isLoanClosed(CLng(txtLoanNum.Text)) Then
+                    MsgBox("Loan Closed. Cannnot Proceed.")
+                    Return
+                End If
             End If
         End If
         Call Try01("http://localhost:9091/loan/loannew",

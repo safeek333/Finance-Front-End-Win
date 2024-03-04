@@ -22,6 +22,7 @@ Partial Class frmReceiptList
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle1 As DataGridViewCellStyle = New DataGridViewCellStyle()
         dgPaymentReceipt = New DataGridView()
         receiptNum = New DataGridViewTextBoxColumn()
         receiptDate = New DataGridViewTextBoxColumn()
@@ -34,6 +35,7 @@ Partial Class frmReceiptList
         receiptEmiId = New DataGridViewTextBoxColumn()
         receiptEmiAmt = New DataGridViewTextBoxColumn()
         receiptTotal = New DataGridViewTextBoxColumn()
+        txtAchAmt = New DataGridViewTextBoxColumn()
         receiptCollSign = New DataGridViewTextBoxColumn()
         txtSearch = New TextBox()
         Label1 = New Label()
@@ -47,23 +49,31 @@ Partial Class frmReceiptList
         ' 
         ' dgPaymentReceipt
         ' 
+        DataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = Color.Teal
+        DataGridViewCellStyle1.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        DataGridViewCellStyle1.ForeColor = SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = DataGridViewTriState.True
+        dgPaymentReceipt.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         dgPaymentReceipt.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        dgPaymentReceipt.Columns.AddRange(New DataGridViewColumn() {receiptNum, receiptDate, receiptCustAddr, receiptAmt, receiptAmtInWords, receiptVeichleNum, receiptLoanNum, receiptEmiDate, receiptEmiId, receiptEmiAmt, receiptTotal, receiptCollSign})
+        dgPaymentReceipt.Columns.AddRange(New DataGridViewColumn() {receiptNum, receiptDate, receiptCustAddr, receiptAmt, receiptAmtInWords, receiptVeichleNum, receiptLoanNum, receiptEmiDate, receiptEmiId, receiptEmiAmt, receiptTotal, txtAchAmt, receiptCollSign})
         dgPaymentReceipt.Dock = DockStyle.Bottom
         dgPaymentReceipt.Location = New Point(0, 676)
         dgPaymentReceipt.Name = "dgPaymentReceipt"
         dgPaymentReceipt.RowHeadersWidth = 51
         dgPaymentReceipt.RowTemplate.Height = 29
-        dgPaymentReceipt.Size = New Size(1139, 379)
+        dgPaymentReceipt.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+        dgPaymentReceipt.Size = New Size(1316, 379)
         dgPaymentReceipt.TabIndex = 0
         ' 
         ' receiptNum
         ' 
-        receiptNum.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
         receiptNum.HeaderText = "Receipt Num."
         receiptNum.MinimumWidth = 6
         receiptNum.Name = "receiptNum"
-        receiptNum.Width = 117
+        receiptNum.Width = 60
         ' 
         ' receiptDate
         ' 
@@ -71,7 +81,7 @@ Partial Class frmReceiptList
         receiptDate.HeaderText = "Receipt Date"
         receiptDate.MinimumWidth = 6
         receiptDate.Name = "receiptDate"
-        receiptDate.Width = 114
+        receiptDate.Width = 117
         ' 
         ' receiptCustAddr
         ' 
@@ -79,7 +89,7 @@ Partial Class frmReceiptList
         receiptCustAddr.HeaderText = "Customer Address"
         receiptCustAddr.MinimumWidth = 6
         receiptCustAddr.Name = "receiptCustAddr"
-        receiptCustAddr.Width = 145
+        receiptCustAddr.Width = 153
         ' 
         ' receiptAmt
         ' 
@@ -87,7 +97,7 @@ Partial Class frmReceiptList
         receiptAmt.HeaderText = "Amount"
         receiptAmt.MinimumWidth = 6
         receiptAmt.Name = "receiptAmt"
-        receiptAmt.Width = 91
+        receiptAmt.Width = 96
         ' 
         ' receiptAmtInWords
         ' 
@@ -95,7 +105,7 @@ Partial Class frmReceiptList
         receiptAmtInWords.HeaderText = "Amount In Words"
         receiptAmtInWords.MinimumWidth = 6
         receiptAmtInWords.Name = "receiptAmtInWords"
-        receiptAmtInWords.Width = 102
+        receiptAmtInWords.Width = 109
         ' 
         ' receiptVeichleNum
         ' 
@@ -103,15 +113,14 @@ Partial Class frmReceiptList
         receiptVeichleNum.HeaderText = "Veichle Number"
         receiptVeichleNum.MinimumWidth = 6
         receiptVeichleNum.Name = "receiptVeichleNum"
-        receiptVeichleNum.Width = 131
+        receiptVeichleNum.Width = 137
         ' 
         ' receiptLoanNum
         ' 
-        receiptLoanNum.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
         receiptLoanNum.HeaderText = "Loan Number"
         receiptLoanNum.MinimumWidth = 6
         receiptLoanNum.Name = "receiptLoanNum"
-        receiptLoanNum.Width = 118
+        receiptLoanNum.Width = 60
         ' 
         ' receiptEmiDate
         ' 
@@ -119,7 +128,7 @@ Partial Class frmReceiptList
         receiptEmiDate.HeaderText = "Emi Date"
         receiptEmiDate.MinimumWidth = 6
         receiptEmiDate.Name = "receiptEmiDate"
-        receiptEmiDate.Width = 92
+        receiptEmiDate.Width = 93
         ' 
         ' receiptEmiId
         ' 
@@ -127,7 +136,7 @@ Partial Class frmReceiptList
         receiptEmiId.HeaderText = "Emi Id"
         receiptEmiId.MinimumWidth = 6
         receiptEmiId.Name = "receiptEmiId"
-        receiptEmiId.Width = 63
+        receiptEmiId.Width = 64
         ' 
         ' receiptEmiAmt
         ' 
@@ -135,7 +144,7 @@ Partial Class frmReceiptList
         receiptEmiAmt.HeaderText = "Emi Amount"
         receiptEmiAmt.MinimumWidth = 6
         receiptEmiAmt.Name = "receiptEmiAmt"
-        receiptEmiAmt.Width = 110
+        receiptEmiAmt.Width = 116
         ' 
         ' receiptTotal
         ' 
@@ -143,19 +152,26 @@ Partial Class frmReceiptList
         receiptTotal.HeaderText = "Total"
         receiptTotal.MinimumWidth = 6
         receiptTotal.Name = "receiptTotal"
-        receiptTotal.Width = 71
+        receiptTotal.Width = 73
+        ' 
+        ' txtAchAmt
+        ' 
+        txtAchAmt.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+        txtAchAmt.HeaderText = "Ach Amt"
+        txtAchAmt.MinimumWidth = 6
+        txtAchAmt.Name = "txtAchAmt"
+        txtAchAmt.Width = 92
         ' 
         ' receiptCollSign
         ' 
-        receiptCollSign.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
         receiptCollSign.HeaderText = "Collected By"
         receiptCollSign.MinimumWidth = 6
         receiptCollSign.Name = "receiptCollSign"
-        receiptCollSign.Width = 111
+        receiptCollSign.Width = 50
         ' 
         ' txtSearch
         ' 
-        txtSearch.Location = New Point(56, 623)
+        txtSearch.Location = New Point(871, 32)
         txtSearch.Name = "txtSearch"
         txtSearch.Size = New Size(212, 27)
         txtSearch.TabIndex = 1
@@ -163,26 +179,32 @@ Partial Class frmReceiptList
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Location = New Point(5, 626)
+        Label1.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        Label1.ForeColor = Color.Teal
+        Label1.Location = New Point(871, 9)
         Label1.Name = "Label1"
-        Label1.Size = New Size(45, 20)
+        Label1.Size = New Size(50, 20)
         Label1.TabIndex = 2
         Label1.Text = "Filter:"
         ' 
         ' txtExport
         ' 
-        txtExport.Location = New Point(274, 621)
+        txtExport.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        txtExport.ForeColor = Color.Teal
+        txtExport.Location = New Point(1089, 30)
         txtExport.Name = "txtExport"
-        txtExport.Size = New Size(212, 29)
+        txtExport.Size = New Size(115, 29)
         txtExport.TabIndex = 3
         txtExport.Text = "Export PDF"
         txtExport.UseVisualStyleBackColor = True
         ' 
         ' btnPrint
         ' 
-        btnPrint.Location = New Point(492, 621)
+        btnPrint.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        btnPrint.ForeColor = Color.Teal
+        btnPrint.Location = New Point(1210, 30)
         btnPrint.Name = "btnPrint"
-        btnPrint.Size = New Size(212, 29)
+        btnPrint.Size = New Size(92, 29)
         btnPrint.TabIndex = 4
         btnPrint.Text = "Print"
         btnPrint.UseVisualStyleBackColor = True
@@ -195,7 +217,8 @@ Partial Class frmReceiptList
         ' 
         Label2.AutoSize = True
         Label2.Font = New Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point)
-        Label2.Location = New Point(56, 653)
+        Label2.ForeColor = Color.Red
+        Label2.Location = New Point(871, 64)
         Label2.Name = "Label2"
         Label2.Size = New Size(403, 20)
         Label2.TabIndex = 5
@@ -205,7 +228,7 @@ Partial Class frmReceiptList
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1139, 1055)
+        ClientSize = New Size(1316, 1055)
         Controls.Add(Label2)
         Controls.Add(btnPrint)
         Controls.Add(txtExport)
@@ -227,6 +250,7 @@ Partial Class frmReceiptList
     Friend WithEvents txtExport As Button
     Friend WithEvents btnPrint As Button
     Friend WithEvents PrintDialog1 As PrintDialog
+    Friend WithEvents Label2 As Label
     Friend WithEvents receiptNum As DataGridViewTextBoxColumn
     Friend WithEvents receiptDate As DataGridViewTextBoxColumn
     Friend WithEvents receiptCustAddr As DataGridViewTextBoxColumn
@@ -238,6 +262,6 @@ Partial Class frmReceiptList
     Friend WithEvents receiptEmiId As DataGridViewTextBoxColumn
     Friend WithEvents receiptEmiAmt As DataGridViewTextBoxColumn
     Friend WithEvents receiptTotal As DataGridViewTextBoxColumn
+    Friend WithEvents txtAchAmt As DataGridViewTextBoxColumn
     Friend WithEvents receiptCollSign As DataGridViewTextBoxColumn
-    Friend WithEvents Label2 As Label
 End Class

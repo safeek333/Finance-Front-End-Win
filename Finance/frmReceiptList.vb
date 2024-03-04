@@ -55,8 +55,14 @@ Public Class frmReceiptList
                 'MsgBox(MyArray(9))
                 '[1|08-02-2024 08:12:26|RAFEEK, 5/7 MAHA STREET, EPTY. 621215.|732.0|Seven Hundred Thirty Two |TN48BA0103
                 '|22|03/10|10-04-2024|03/10|732.0|732.0|Root|2024-02-08]
-                dgPaymentReceipt.Rows.Insert(J, New String() {MyArray(0), MyArray(1), MyArray(2), MyArray(3),
-                                             MyArray(4), MyArray(5), MyArray(6), MyArray(8), MyArray(7), MyArray(10), MyArray(11), MyArray(12), MyArray(13)})
+
+                '5|03-03-2024|RAFEEK, 5/7 MAHA STREET, EPTY. 621215.|530.0|Five Hundred Thirty |NA|16|03/10|09-01-2024|03/10|500.0|530.0|Root|2024-03-03|30.0
+                Try
+                    'MsgBox(MyArray(14))
+                    dgPaymentReceipt.Rows.Insert(J, New String() {MyArray(0), MyArray(1), MyArray(2), MyArray(3), MyArray(4), MyArray(5), MyArray(6), MyArray(8), MyArray(7), MyArray(10), MyArray(11), MyArray(14), MyArray(12)})
+                Catch
+                    dgPaymentReceipt.Rows.Insert(J, New String() {MyArray(0), MyArray(1), MyArray(2), MyArray(3), MyArray(4), MyArray(5), MyArray(6), MyArray(8), MyArray(7), MyArray(10), MyArray(11), MyArray(14), MyArray(12)})
+                End Try
                 ',MyArray(9), MyArray(10), MyArray(11), MyArray(12)
                 '})
                 'MyArray(9), MyArray(10), MyArray(11), MyArray(12), MyArray(13), MyArray(14), MyArray(15), 
@@ -88,13 +94,22 @@ Public Class frmReceiptList
         Call FetchEmiDetail("http://localhost:9091/loan/paymentReceiptList", "|")
     End Sub
 
+    Public Sub OpenAllPenalityList(loanNumber As Long)
 
+
+
+        Me.Show()
+
+        Me.dgPaymentReceipt.Rows.Clear()
+
+        Call FetchEmiDetail("http://localhost:9091/loan/loanPaymentReceiptList/" & loanNumber, "|")
+    End Sub
 
     Private Sub ExportAsPDF()
         Dim pdfTable As New PdfPTable(dgPaymentReceipt.ColumnCount)
         pdfTable.DefaultCell.Padding = 3
 
-        Dim widths As Single() = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+        Dim widths As Single() = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
 
         Dim j As Integer = 0
         For Each column As DataGridViewColumn In dgPaymentReceipt.Columns
@@ -193,6 +208,10 @@ Public Class frmReceiptList
     End Sub
 
     Private Sub dgPaymentReceipt_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgPaymentReceipt.CellContentClick
+
+    End Sub
+
+    Private Sub dgPaymentReceipt_CellMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dgPaymentReceipt.CellMouseClick
         Try
             'MsgBox("Receipt No. " & dgPaymentReceipt.Item(0, e.RowIndex).Value)
 
@@ -218,7 +237,8 @@ Public Class frmReceiptList
             dgPaymentReceipt.Item(7, e.RowIndex).Value,
             dgPaymentReceipt.Item(8, e.RowIndex).Value,
             dgPaymentReceipt.Item(9, e.RowIndex).Value,
-            dgPaymentReceipt.Item(10, e.RowIndex).Value
+            dgPaymentReceipt.Item(10, e.RowIndex).Value,
+            dgPaymentReceipt.Item(11, e.RowIndex).Value
             )
         Catch ex As Exception
 

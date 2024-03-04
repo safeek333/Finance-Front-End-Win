@@ -14,17 +14,19 @@ Public Class mdiFinance
         frmEditLoanRegistrationInput.Show()
     End Sub
 
-    Private Sub DailyExpensesBillEntryToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DailyExpensesBillEntryToolStripMenuItem.Click
-        'BillExpenseEntry.Show()
-        'Process.Start("C:\Users\safiya\source\repos\WinFormsApp1\WinFormsApp1\bin\Release\net6.0-windows\WinFormsApp1.exe")
-
-    End Sub
-
     Private Sub mdiFinance_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        frmLogin.Show()
-        frmLogin.Focus()
-        frmLogin.UsernameTextBox.Text = "root"
-        frmLogin.PasswordTextBox.Text = "root"
+        Dim Res As String
+        Res = AboutBox1.GenLic()
+        If Res = "f4eb05ce5953bd9b02cb6b8bea11c3c5#2a0v2h5b0d2s2j8f" Then
+            frmLogin.Show()
+            frmLogin.Focus()
+            'frmLogin.UsernameTextBox.Text = "root"
+            'frmLogin.PasswordTextBox.Text = "root"
+        Else
+            MsgBox("Application " & Res)
+            Application.Exit()
+        End If
+
 
     End Sub
 
@@ -95,5 +97,17 @@ Public Class mdiFinance
 
     Private Sub GenerateLoanSummaryToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GenerateLoanSummaryToolStripMenuItem.Click
         frmGenLoanSummary.Show()
+    End Sub
+
+    Private Sub ViewEmToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ViewEmToolStripMenuItem.Click
+        frmGenEmiPendingList.Show()
+    End Sub
+
+    Private Sub AboutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem.Click
+        AboutBox1.Show()
+    End Sub
+
+    Private Sub ViewLoanReceiptsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ViewLoanReceiptsToolStripMenuItem.Click
+        frmEditLoanRecepts.Show()
     End Sub
 End Class

@@ -40,6 +40,12 @@ Partial Class frmNewEmiPayment
         lblLoanCloseDate = New Label()
         loadBasicDetail = New Button()
         GroupBox1 = New GroupBox()
+        lblReceiptBookNum = New Label()
+        txtReceiptBookNum = New TextBox()
+        Label10 = New Label()
+        txtTotalAmt = New TextBox()
+        Label9 = New Label()
+        txtAHCAmt = New TextBox()
         lblBillDoneBy = New Label()
         txtBillDoneBy = New TextBox()
         dtEmiDate = New DateTimePicker()
@@ -215,15 +221,21 @@ Partial Class frmNewEmiPayment
         ' 
         ' loadBasicDetail
         ' 
-        loadBasicDetail.Location = New Point(169, 57)
+        loadBasicDetail.Location = New Point(12, 113)
         loadBasicDetail.Name = "loadBasicDetail"
-        loadBasicDetail.Size = New Size(342, 50)
+        loadBasicDetail.Size = New Size(150, 50)
         loadBasicDetail.TabIndex = 97
         loadBasicDetail.Text = "Load Basic Details"
         loadBasicDetail.UseVisualStyleBackColor = True
         ' 
         ' GroupBox1
         ' 
+        GroupBox1.Controls.Add(lblReceiptBookNum)
+        GroupBox1.Controls.Add(txtReceiptBookNum)
+        GroupBox1.Controls.Add(Label10)
+        GroupBox1.Controls.Add(txtTotalAmt)
+        GroupBox1.Controls.Add(Label9)
+        GroupBox1.Controls.Add(txtAHCAmt)
         GroupBox1.Controls.Add(lblBillDoneBy)
         GroupBox1.Controls.Add(txtBillDoneBy)
         GroupBox1.Controls.Add(dtEmiDate)
@@ -241,18 +253,72 @@ Partial Class frmNewEmiPayment
         GroupBox1.Controls.Add(Label4)
         GroupBox1.Controls.Add(dtEmiPaymentDate)
         GroupBox1.Controls.Add(lblEmiPaymentDate)
-        GroupBox1.Location = New Point(12, 465)
+        GroupBox1.Location = New Point(12, 344)
         GroupBox1.Name = "GroupBox1"
-        GroupBox1.Size = New Size(507, 330)
+        GroupBox1.Size = New Size(682, 336)
         GroupBox1.TabIndex = 98
         GroupBox1.TabStop = False
         GroupBox1.Text = "Payment Entry"
+        ' 
+        ' lblReceiptBookNum
+        ' 
+        lblReceiptBookNum.AutoSize = True
+        lblReceiptBookNum.Font = New Font("Arial Rounded MT Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point)
+        lblReceiptBookNum.Location = New Point(513, 94)
+        lblReceiptBookNum.Name = "lblReceiptBookNum"
+        lblReceiptBookNum.Size = New Size(151, 20)
+        lblReceiptBookNum.TabIndex = 119
+        lblReceiptBookNum.Text = "Book Receipt No."
+        ' 
+        ' txtReceiptBookNum
+        ' 
+        txtReceiptBookNum.Location = New Point(513, 117)
+        txtReceiptBookNum.Name = "txtReceiptBookNum"
+        txtReceiptBookNum.Size = New Size(156, 27)
+        txtReceiptBookNum.TabIndex = 120
+        ' 
+        ' Label10
+        ' 
+        Label10.AutoSize = True
+        Label10.Font = New Font("Arial Rounded MT Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point)
+        Label10.Location = New Point(337, 94)
+        Label10.Name = "Label10"
+        Label10.Size = New Size(93, 20)
+        Label10.TabIndex = 117
+        Label10.Text = "Total Amt:"
+        ' 
+        ' txtTotalAmt
+        ' 
+        txtTotalAmt.Location = New Point(337, 117)
+        txtTotalAmt.Name = "txtTotalAmt"
+        txtTotalAmt.ReadOnly = True
+        txtTotalAmt.Size = New Size(156, 27)
+        txtTotalAmt.TabIndex = 118
+        txtTotalAmt.Text = "0.0"
+        ' 
+        ' Label9
+        ' 
+        Label9.AutoSize = True
+        Label9.Font = New Font("Arial Rounded MT Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point)
+        Label9.Location = New Point(174, 94)
+        Label9.Name = "Label9"
+        Label9.Size = New Size(164, 20)
+        Label9.TabIndex = 115
+        Label9.Text = "AHC Payment Amt:"
+        ' 
+        ' txtAHCAmt
+        ' 
+        txtAHCAmt.Location = New Point(174, 117)
+        txtAHCAmt.Name = "txtAHCAmt"
+        txtAHCAmt.Size = New Size(156, 27)
+        txtAHCAmt.TabIndex = 116
+        txtAHCAmt.Text = "0.0"
         ' 
         ' lblBillDoneBy
         ' 
         lblBillDoneBy.AutoSize = True
         lblBillDoneBy.Font = New Font("Arial Rounded MT Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point)
-        lblBillDoneBy.Location = New Point(342, 94)
+        lblBillDoneBy.Location = New Point(510, 263)
         lblBillDoneBy.Name = "lblBillDoneBy"
         lblBillDoneBy.Size = New Size(113, 20)
         lblBillDoneBy.TabIndex = 99
@@ -260,10 +326,10 @@ Partial Class frmNewEmiPayment
         ' 
         ' txtBillDoneBy
         ' 
-        txtBillDoneBy.Location = New Point(342, 117)
+        txtBillDoneBy.Location = New Point(510, 286)
         txtBillDoneBy.Name = "txtBillDoneBy"
         txtBillDoneBy.ReadOnly = True
-        txtBillDoneBy.Size = New Size(162, 27)
+        txtBillDoneBy.Size = New Size(149, 27)
         txtBillDoneBy.TabIndex = 100
         txtBillDoneBy.Text = "Root"
         ' 
@@ -280,9 +346,9 @@ Partial Class frmNewEmiPayment
         Label7.Font = New Font("Arial Rounded MT Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point)
         Label7.Location = New Point(340, 35)
         Label7.Name = "Label7"
-        Label7.Size = New Size(132, 20)
+        Label7.Size = New Size(88, 20)
         Label7.TabIndex = 113
-        Label7.Text = "Loan Emi Date:"
+        Label7.Text = "Emi Date:"
         ' 
         ' cboEmiId
         ' 
@@ -309,7 +375,7 @@ Partial Class frmNewEmiPayment
         txtAmtInWords.Multiline = True
         txtAmtInWords.Name = "txtAmtInWords"
         txtAmtInWords.ReadOnly = True
-        txtAmtInWords.Size = New Size(492, 63)
+        txtAmtInWords.Size = New Size(492, 50)
         txtAmtInWords.TabIndex = 110
         ' 
         ' Label6
@@ -318,9 +384,9 @@ Partial Class frmNewEmiPayment
         Label6.Font = New Font("Arial Rounded MT Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point)
         Label6.Location = New Point(9, 148)
         Label6.Name = "Label6"
-        Label6.Size = New Size(153, 20)
+        Label6.Size = New Size(199, 20)
         Label6.TabIndex = 109
-        Label6.Text = "Amount In Words:"
+        Label6.Text = "Total Amount In Words:"
         ' 
         ' cboPaymentType
         ' 
@@ -336,7 +402,7 @@ Partial Class frmNewEmiPayment
         txtPaymentDesc.Location = New Point(6, 260)
         txtPaymentDesc.Multiline = True
         txtPaymentDesc.Name = "txtPaymentDesc"
-        txtPaymentDesc.Size = New Size(334, 61)
+        txtPaymentDesc.Size = New Size(495, 64)
         txtPaymentDesc.TabIndex = 108
         ' 
         ' Label5
@@ -353,7 +419,7 @@ Partial Class frmNewEmiPayment
         ' 
         Label1.AutoSize = True
         Label1.Font = New Font("Arial Rounded MT Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point)
-        Label1.Location = New Point(9, 94)
+        Label1.Location = New Point(12, 94)
         Label1.Name = "Label1"
         Label1.Size = New Size(156, 20)
         Label1.TabIndex = 97
@@ -361,16 +427,17 @@ Partial Class frmNewEmiPayment
         ' 
         ' Button1
         ' 
-        Button1.Location = New Point(354, 260)
+        Button1.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        Button1.Location = New Point(510, 171)
         Button1.Name = "Button1"
-        Button1.Size = New Size(153, 61)
+        Button1.Size = New Size(153, 50)
         Button1.TabIndex = 100
         Button1.Text = "Make Payment Entry"
         Button1.UseVisualStyleBackColor = True
         ' 
         ' txtEmiPaymentAmt
         ' 
-        txtEmiPaymentAmt.Location = New Point(9, 117)
+        txtEmiPaymentAmt.Location = New Point(12, 117)
         txtEmiPaymentAmt.Name = "txtEmiPaymentAmt"
         txtEmiPaymentAmt.Size = New Size(156, 27)
         txtEmiPaymentAmt.TabIndex = 98
@@ -388,7 +455,7 @@ Partial Class frmNewEmiPayment
         ' 
         ' dtEmiPaymentDate
         ' 
-        dtEmiPaymentDate.Location = New Point(173, 117)
+        dtEmiPaymentDate.Location = New Point(513, 58)
         dtEmiPaymentDate.Name = "dtEmiPaymentDate"
         dtEmiPaymentDate.Size = New Size(162, 27)
         dtEmiPaymentDate.TabIndex = 98
@@ -397,7 +464,7 @@ Partial Class frmNewEmiPayment
         ' 
         lblEmiPaymentDate.AutoSize = True
         lblEmiPaymentDate.Font = New Font("Arial Rounded MT Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point)
-        lblEmiPaymentDate.Location = New Point(173, 94)
+        lblEmiPaymentDate.Location = New Point(513, 35)
         lblEmiPaymentDate.Name = "lblEmiPaymentDate"
         lblEmiPaymentDate.Size = New Size(163, 20)
         lblEmiPaymentDate.TabIndex = 97
@@ -419,9 +486,9 @@ Partial Class frmNewEmiPayment
         GroupBox2.Controls.Add(txtEmiMonths)
         GroupBox2.Controls.Add(cboLoanStatus)
         GroupBox2.Controls.Add(lblLoanStatus)
-        GroupBox2.Location = New Point(12, 254)
+        GroupBox2.Location = New Point(9, 182)
         GroupBox2.Name = "GroupBox2"
-        GroupBox2.Size = New Size(507, 205)
+        GroupBox2.Size = New Size(685, 156)
         GroupBox2.TabIndex = 99
         GroupBox2.TabStop = False
         GroupBox2.Text = "Loan Basic Details"
@@ -430,7 +497,7 @@ Partial Class frmNewEmiPayment
         ' 
         Label8.AutoSize = True
         Label8.Font = New Font("Arial Rounded MT Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point)
-        Label8.Location = New Point(9, 149)
+        Label8.Location = New Point(513, 32)
         Label8.Name = "Label8"
         Label8.Size = New Size(103, 20)
         Label8.TabIndex = 97
@@ -438,7 +505,7 @@ Partial Class frmNewEmiPayment
         ' 
         ' txtVeichleNum
         ' 
-        txtVeichleNum.Location = New Point(9, 172)
+        txtVeichleNum.Location = New Point(513, 55)
         txtVeichleNum.Name = "txtVeichleNum"
         txtVeichleNum.ReadOnly = True
         txtVeichleNum.Size = New Size(162, 27)
@@ -460,9 +527,9 @@ Partial Class frmNewEmiPayment
         GroupBox3.Controls.Add(Label3)
         GroupBox3.Controls.Add(TextBox1)
         GroupBox3.Controls.Add(Label2)
-        GroupBox3.Location = New Point(12, 132)
+        GroupBox3.Location = New Point(185, 39)
         GroupBox3.Name = "GroupBox3"
-        GroupBox3.Size = New Size(507, 116)
+        GroupBox3.Size = New Size(509, 124)
         GroupBox3.TabIndex = 102
         GroupBox3.TabStop = False
         GroupBox3.Text = "Customer Basic Details"
@@ -473,7 +540,7 @@ Partial Class frmNewEmiPayment
         txtCustAddr.Multiline = True
         txtCustAddr.Name = "txtCustAddr"
         txtCustAddr.ReadOnly = True
-        txtCustAddr.Size = New Size(406, 55)
+        txtCustAddr.Size = New Size(396, 54)
         txtCustAddr.TabIndex = 106
         txtCustAddr.Text = "NA"
         ' 
@@ -507,9 +574,9 @@ Partial Class frmNewEmiPayment
         ' 
         ' frmNewEmiPayment
         ' 
-        AutoScaleDimensions = New SizeF(8.0F, 20.0F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(540, 807)
+        ClientSize = New Size(700, 699)
         Controls.Add(GroupBox3)
         Controls.Add(btnLoanNumEdit)
         Controls.Add(GroupBox2)
@@ -576,4 +643,10 @@ Partial Class frmNewEmiPayment
     Friend WithEvents txtVeichleNum As TextBox
     Friend WithEvents lblBillDoneBy As Label
     Friend WithEvents txtBillDoneBy As TextBox
+    Friend WithEvents Label9 As Label
+    Friend WithEvents txtAHCAmt As TextBox
+    Friend WithEvents Label10 As Label
+    Friend WithEvents txtTotalAmt As TextBox
+    Friend WithEvents lblReceiptBookNum As Label
+    Friend WithEvents txtReceiptBookNum As TextBox
 End Class

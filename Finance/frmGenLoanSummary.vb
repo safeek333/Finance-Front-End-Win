@@ -10,10 +10,8 @@ Public Class frmGenLoanSummary
 
     End Sub
 
-    Public Function GenPdf(loanNumber As Long)
+    Public Function GenPdfOrHtml(URL As Object, loanNumber As Long)
         Try
-            Dim URL As Object
-            URL = "http://localhost:9091/loan/summary/" & loanNumber & "/pdf"
             Dim myReq As HttpWebRequest
             Dim myResp As HttpWebResponse
             Dim myReader As StreamReader
@@ -24,9 +22,9 @@ Public Class frmGenLoanSummary
             Dim rec = myReader.ReadToEnd
             'MsgBox(URL & " / emi date :  " & rec)
             If (rec = "Success") Then
-                GenPdf = True
+                GenPdfOrHtml = True
             Else
-                GenPdf = False
+                GenPdfOrHtml = False
             End If
             'SplitCustRecToView(rec)
             'txtLoanNum.ReadOnly = True
@@ -44,10 +42,19 @@ Public Class frmGenLoanSummary
             Try
                 Dim loanNumber As Long
                 loanNumber = CLng(txtLoanNum.Text)
-                If GenPdf(loanNumber) = True Then
-                    MsgBox("Pdf Generated Successfully")
+
+                If cboFileType.SelectedItem = "HTML" Then
+                    If GenPdfOrHtml("http://localhost:9091/loan/summary/" & loanNumber & "/html", loanNumber) = True Then
+                        MsgBox("Html Generated Successfully")
+                    Else
+                        MsgBox("Html Not Generated")
+                    End If
                 Else
-                    MsgBox("Pdf Not Generated")
+                    If GenPdfOrHtml("http://localhost:9091/loan/summary/" & loanNumber & "/pdf", loanNumber) = True Then
+                        MsgBox("Pdf Generated Successfully")
+                    Else
+                        MsgBox("Pdf Not Generated")
+                    End If
                 End If
             Catch ex As Exception
                 MsgBox("Invalid Loan Number")

@@ -5,10 +5,10 @@
 
     Public Sub UpdateBillContent(dt As String, custName As String, rupees As String, rupeesInWords1 As String,
                                  rupeesInWords2 As String, billLoanNo As String, emiDt As String,
-                                 emino As String, emitotno As String, billamt As String, billTot As String, veichleNo As String)
+                                 emino As String, emitotno As String, billamt As String, billTot As String, veichleNo As String, ahcamt As String)
         lblBillDate.Text = dt
         lblCustName.Text = custName
-        lblRupees.Text = rupees
+        lblRupees.Text = billTot 'rupees
         lblInWords1.Text = rupeesInWords1
         lblInWords2.Text = rupeesInWords2
         lblBillLoanNo.Text = billLoanNo
@@ -24,6 +24,8 @@
         lblBillAmount.Text = billamt
         lblBillTotal.Text = billTot
         lblBillVeichleNo.Text = veichleNo
+        lblAhcAmt.Text = ahcamt
+
 
 
 
@@ -31,12 +33,12 @@
 
     Public Sub UpdateBillContentStr(billNo As String, dt As String, custName As String, rupees As String, rupeesInWords1 As String,
                                  rupeesInWords2 As String, veichleNo As String, billLoanNo As String, emiDt As String,
-                                 emiid As String, billamt As String, billTot As String)
+                                 emiid As String, billamt As String, billTot As String, ahcamt As String)
 
         lblBillNo.Text = billNo
         lblBillDate.Text = dt
         lblCustName.Text = custName
-        lblRupees.Text = rupees
+        lblRupees.Text = billTot 'rupees
         lblInWords1.Text = rupeesInWords1
         lblInWords2.Text = rupeesInWords2
         lblBillLoanNo.Text = billLoanNo
@@ -45,6 +47,7 @@
         lblBillTotal.Text = billTot
         lblBillVeichleNo.Text = veichleNo
         lblEmiDate.Text = emiDt
+        lblAhcAmt.Text = ahcamt
 
 
 

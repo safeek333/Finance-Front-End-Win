@@ -50,7 +50,7 @@ Public Class frmPaymentList
                 'iterate through the array created to show each value
 
 
-                dgPaymentList.Rows.Insert(J, New String() {MyArray(0), MyArray(1), MyArray(2), MyArray(3), MyArray(4)})
+                dgPaymentList.Rows.Insert(J, New String() {MyArray(0), MyArray(1), MyArray(5), MyArray(2), MyArray(3), MyArray(4), MyArray(6)})
                 'MyArray(9), MyArray(10), MyArray(11), MyArray(12), MyArray(13), MyArray(14), MyArray(15), 
 
 
@@ -78,7 +78,7 @@ Public Class frmPaymentList
         Dim pdfTable As New PdfPTable(dgPaymentList.ColumnCount)
         pdfTable.DefaultCell.Padding = 3
 
-        Dim widths As Single() = {0, 0, 0, 0, 0, 0}
+        Dim widths As Single() = {0, 0, 0, 0, 0, 0, 0}
 
         Dim j As Integer = 0
         For Each column As DataGridViewColumn In dgPaymentList.Columns
@@ -86,7 +86,7 @@ Public Class frmPaymentList
             j += 1
         Next
 
-        pdfTable.SetWidthPercentage(widths, PageSize.A4)
+        pdfTable.SetWidthPercentage(widths, PageSize.A4.Rotate)
 
         pdfTable.HorizontalAlignment = Element.ALIGN_CENTER
         pdfTable.DefaultCell.BorderWidth = 1
@@ -121,7 +121,7 @@ Public Class frmPaymentList
         phrase = New Phrase(Me.Text & " Report", font)
 
         Using stream As New FileStream(folderPath & Me.Text & ".pdf", FileMode.Create)
-            Dim pdfDoc As New iTextSharp.text.Document(PageSize.A4, 50.0F, 25.0F, 50.0F, 25.0F)
+            Dim pdfDoc As New iTextSharp.text.Document(PageSize.A4.Rotate, 50.0F, 25.0F, 50.0F, 25.0F)
 
             PdfWriter.GetInstance(pdfDoc, stream)
             pdfDoc.Open()
@@ -139,5 +139,9 @@ Public Class frmPaymentList
         Catch
             MsgBox("Export Not Done")
         End Try
+    End Sub
+
+    Private Sub frmPaymentList_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 End Class

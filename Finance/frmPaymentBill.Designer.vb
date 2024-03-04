@@ -41,6 +41,8 @@ Partial Class frmPaymentBill
         btnBillPrint = New Button()
         PrintDocument1 = New Printing.PrintDocument()
         lblBillNo = New Label()
+        lblAhc = New Label()
+        lblAhcAmt = New Label()
         SuspendLayout()
         ' 
         ' lblBillDate
@@ -158,11 +160,27 @@ Partial Class frmPaymentBill
         lblBillNo.ForeColor = Color.Black
         lblBillNo.Name = "lblBillNo"
         ' 
+        ' lblAhc
+        ' 
+        resources.ApplyResources(lblAhc, "lblAhc")
+        lblAhc.BackColor = Color.Transparent
+        lblAhc.ForeColor = SystemColors.WindowText
+        lblAhc.Name = "lblAhc"
+        ' 
+        ' lblAhcAmt
+        ' 
+        resources.ApplyResources(lblAhcAmt, "lblAhcAmt")
+        lblAhcAmt.BackColor = Color.Transparent
+        lblAhcAmt.ForeColor = SystemColors.WindowText
+        lblAhcAmt.Name = "lblAhcAmt"
+        ' 
         ' frmPaymentBill
         ' 
         AcceptButton = btnBillPrint
         resources.ApplyResources(Me, "$this")
         AutoScaleMode = AutoScaleMode.Font
+        Controls.Add(lblAhcAmt)
+        Controls.Add(lblAhc)
         Controls.Add(lblBillNo)
         Controls.Add(lblInWords2)
         Controls.Add(lblCustName)
@@ -199,4 +217,6 @@ Partial Class frmPaymentBill
     Friend WithEvents btnBillPrint As Button
     Friend WithEvents PrintDocument1 As Printing.PrintDocument
     Friend WithEvents lblBillNo As Label
+    Friend WithEvents lblAhc As Label
+    Friend WithEvents lblAhcAmt As Label
 End Class

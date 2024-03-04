@@ -117,6 +117,14 @@ Public Class frmNewEmiPayment
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        If Me.cboPaymentType.SelectedItem = "CUST PAY IN" Or
+            Me.cboPaymentType.SelectedItem = "CUST PAY OUT" Then
+            If Not IsNumeric(txtReceiptBookNum.Text) Then
+                MsgBox("Valid Receipt Book Number Required")
+                Return
+            End If
+        End If
+
 
         If Not IsNumeric(txtLoanNum.Text) Then
             MsgBox("Loan Number Required")
@@ -164,6 +172,8 @@ Public Class frmNewEmiPayment
                 """,""receiptEmiAmt"":""" & frmPaymentBill.lblBillAmount.Text &
                 """,""receiptTotal"":""" & frmPaymentBill.lblBillTotal.Text &
                 """,""receiptCollSign"":""" & "Root" &
+                """,""receiptAhcAmt"":""" & frmPaymentBill.lblAhcAmt.Text &
+                """,""receiptBookNum"":""" & frmPaymentBill.lblBillNo.Text &
                 """}"
 
                 request = "{""loanNumber"":""" & txtLoanNum.Text &
@@ -171,6 +181,7 @@ Public Class frmNewEmiPayment
                    """,""paymentAmt"":""" & txtEmiPaymentAmt.Text &
                    """,""paymentType"":""" & cboPaymentType.SelectedItem &
                    """,""paymentDesc"":""" & txtPaymentDesc.Text &
+                   """,""paymentAhcAmt"":""" & txtAHCAmt.Text &
                    """,""paymentReceipt"":" & receipt &
                    "}"
             Else
@@ -183,7 +194,7 @@ Public Class frmNewEmiPayment
             End If
 
 
-            MsgBox(request)
+            'MsgBox(request)
 
             Call MakePayment("http://localhost:9091/loan/paymentnew", request)
 
@@ -216,10 +227,11 @@ Public Class frmNewEmiPayment
 
     Private Sub UpdateBill()
         Try
+            updateTotalAmt()
             If Me.cboPaymentType.SelectedItem = "CUST PAY IN" Then
                 frmPaymentBill.Show()
                 Try
-                    GetNumber2Words("http://localhost:9091/loan/n2w/" & CLng(Me.txtEmiPaymentAmt.Text))
+                    GetNumber2Words("http://localhost:9091/loan/n2w/" & CLng(txtTotalAmt.Text))
                 Catch e As Exception
 
                 End Try
@@ -235,16 +247,17 @@ Public Class frmNewEmiPayment
                 frmPaymentBill.UpdateBillContent(
                     Me.dtEmiPaymentDate.Value.ToString(),
                     Me.txtCustAddr.Text,
-                    Me.txtEmiPaymentAmt.Text,
+                    DF(Me.txtEmiPaymentAmt.Text),
                     " **** ",
                     Me.txtAmtInWords.Text,
                     Me.txtLoanNum.Text,
                     Me.dtEmiDate.Value,
                     Me.cboEmiId.SelectedItem,
                     Me.txtEmiMonths.Text,
-                    Me.txtEmiPaymentAmt.Text,
-                    Me.txtEmiPaymentAmt.Text,
-                    Me.txtVeichleNum.Text)
+                    DF(Me.txtEmiPaymentAmt.Text),
+                    DF(Me.txtTotalAmt.Text),
+                    Me.txtVeichleNum.Text,
+                    DF(Me.txtAHCAmt.Text))
             Else
                 frmPaymentBill.Hide()
             End If
@@ -252,6 +265,10 @@ Public Class frmNewEmiPayment
 
         End Try
     End Sub
+
+    Private Function DF(val As String)
+        DF = FormatNumber(val, 1,,,)
+    End Function
     Public Sub GetLoanDetail(URL As Object, reqString As String)
         Try
             Dim myReq As HttpWebRequest
@@ -408,4 +425,39 @@ Public Class frmNewEmiPayment
         End If
     End Sub
 
+    Private Sub TextBox2_TextChanged(sender As Object, e As EventArgs) Handles txtTotalAmt.TextChanged
+
+    End Sub
+
+    Private Sub updateTotalAmt()
+        Try
+            Dim totalAmt As Double
+            totalAmt = CDbl(Me.txtEmiPaymentAmt.Text) + CDbl(Me.txtAHCAmt.Text)
+            txtTotalAmt.Text = CDbl(CLng(totalAmt))
+        Catch
+            'MsgBox("Error updateTotalAmt")
+        End Try
+    End Sub
+
+    Private Sub txtAHCAmt_TextChanged(sender As Object, e As EventArgs) Handles txtAHCAmt.TextChanged
+        updateTotalAmt()
+        UpdateBill()
+    End Sub
+
+    Private Sub txtAHCAmt_LostFocus(sender As Object, e As EventArgs) Handles txtAHCAmt.LostFocus
+        txtAHCAmt.Text = FormatNumber(txtAHCAmt.Text, 1,,,)
+    End Sub
+
+    Private Sub txtReceiptBookNum_TextChanged(sender As Object, e As EventArgs) Handles txtReceiptBookNum.TextChanged
+        Try
+            If Me.cboPaymentType.SelectedItem = "CUST PAY IN" Or
+            Me.cboPaymentType.SelectedItem = "CUST PAY OUT" Then
+                If IsNumeric(txtReceiptBookNum.Text) Then
+                    frmPaymentBill.lblBillNo.Text = txtReceiptBookNum.Text
+                End If
+            End If
+        Catch
+
+        End Try
+    End Sub
 End Class

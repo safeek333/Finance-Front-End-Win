@@ -26,6 +26,7 @@ Partial Class frmPenalityList
         Dim DataGridViewCellStyle2 As DataGridViewCellStyle = New DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As DataGridViewCellStyle = New DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As DataGridViewCellStyle = New DataGridViewCellStyle()
         dgPenalityList = New DataGridView()
         penalityId = New DataGridViewTextBoxColumn()
         penalityAmt = New DataGridViewTextBoxColumn()
@@ -37,70 +38,79 @@ Partial Class frmPenalityList
         PrintDialog1 = New PrintDialog()
         PrintDocument1 = New Printing.PrintDocument()
         btnPrint = New Button()
+        Label1 = New Label()
         CType(dgPenalityList, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' dgPenalityList
         ' 
+        DataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = Color.Teal
+        DataGridViewCellStyle1.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        DataGridViewCellStyle1.ForeColor = SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = DataGridViewTriState.True
+        dgPenalityList.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         dgPenalityList.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         dgPenalityList.Columns.AddRange(New DataGridViewColumn() {penalityId, penalityAmt, effectiveDate, penalityDesc})
-        dgPenalityList.Dock = DockStyle.Top
-        dgPenalityList.Location = New Point(0, 0)
+        dgPenalityList.Location = New Point(1, 107)
         dgPenalityList.Name = "dgPenalityList"
         dgPenalityList.RowHeadersWidth = 51
         dgPenalityList.RowTemplate.Height = 29
-        dgPenalityList.Size = New Size(800, 570)
+        dgPenalityList.Size = New Size(974, 850)
         dgPenalityList.TabIndex = 0
         ' 
         ' penalityId
         ' 
         penalityId.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
-        DataGridViewCellStyle1.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point)
-        penalityId.DefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        penalityId.DefaultCellStyle = DataGridViewCellStyle2
         penalityId.HeaderText = "ID"
         penalityId.MinimumWidth = 6
         penalityId.Name = "penalityId"
         penalityId.ReadOnly = True
-        penalityId.Width = 53
+        penalityId.Width = 54
         ' 
         ' penalityAmt
         ' 
         penalityAmt.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
-        DataGridViewCellStyle2.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point)
-        penalityAmt.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle3.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        penalityAmt.DefaultCellStyle = DataGridViewCellStyle3
         penalityAmt.HeaderText = "AMOUNT (per month)"
         penalityAmt.MinimumWidth = 6
         penalityAmt.Name = "penalityAmt"
         penalityAmt.ReadOnly = True
-        penalityAmt.Width = 125
+        penalityAmt.Width = 131
         ' 
         ' effectiveDate
         ' 
         effectiveDate.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
-        DataGridViewCellStyle3.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point)
-        effectiveDate.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle4.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        effectiveDate.DefaultCellStyle = DataGridViewCellStyle4
         effectiveDate.HeaderText = "EFFECTIVE DATE"
         effectiveDate.MinimumWidth = 6
         effectiveDate.Name = "effectiveDate"
         effectiveDate.ReadOnly = True
-        effectiveDate.Width = 134
+        effectiveDate.Width = 140
         ' 
         ' penalityDesc
         ' 
         penalityDesc.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
-        DataGridViewCellStyle4.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point)
-        penalityDesc.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle5.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        penalityDesc.DefaultCellStyle = DataGridViewCellStyle5
         penalityDesc.HeaderText = "DESCRIPTION"
         penalityDesc.MinimumWidth = 6
         penalityDesc.Name = "penalityDesc"
         penalityDesc.ReadOnly = True
-        penalityDesc.Width = 129
+        penalityDesc.Width = 135
         ' 
         ' lblSearch
         ' 
         lblSearch.AutoSize = True
         lblSearch.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
-        lblSearch.Location = New Point(1, 579)
+        lblSearch.ForeColor = Color.Teal
+        lblSearch.Location = New Point(623, 73)
         lblSearch.Name = "lblSearch"
         lblSearch.Size = New Size(67, 28)
         lblSearch.TabIndex = 6
@@ -110,7 +120,7 @@ Partial Class frmPenalityList
         ' 
         txtSearch.BorderStyle = BorderStyle.FixedSingle
         txtSearch.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
-        txtSearch.Location = New Point(68, 576)
+        txtSearch.Location = New Point(703, 67)
         txtSearch.Name = "txtSearch"
         txtSearch.Size = New Size(272, 34)
         txtSearch.TabIndex = 5
@@ -118,9 +128,10 @@ Partial Class frmPenalityList
         ' Button1
         ' 
         Button1.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
-        Button1.Location = New Point(68, 633)
+        Button1.ForeColor = Color.Teal
+        Button1.Location = New Point(623, 17)
         Button1.Name = "Button1"
-        Button1.Size = New Size(272, 41)
+        Button1.Size = New Size(173, 41)
         Button1.TabIndex = 7
         Button1.Text = "Export As PDF"
         Button1.UseVisualStyleBackColor = True
@@ -133,18 +144,31 @@ Partial Class frmPenalityList
         ' btnPrint
         ' 
         btnPrint.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
-        btnPrint.Location = New Point(68, 690)
+        btnPrint.ForeColor = Color.Teal
+        btnPrint.Location = New Point(802, 17)
         btnPrint.Name = "btnPrint"
-        btnPrint.Size = New Size(272, 41)
+        btnPrint.Size = New Size(173, 41)
         btnPrint.TabIndex = 8
         btnPrint.Text = "Print"
         btnPrint.UseVisualStyleBackColor = True
+        ' 
+        ' Label1
+        ' 
+        Label1.AutoSize = True
+        Label1.Font = New Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point)
+        Label1.ForeColor = Color.Teal
+        Label1.Location = New Point(1, 16)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(509, 38)
+        Label1.TabIndex = 9
+        Label1.Text = "Additional Finanace Charges (Master)"
         ' 
         ' frmPenalityList
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(800, 755)
+        ClientSize = New Size(987, 755)
+        Controls.Add(Label1)
         Controls.Add(btnPrint)
         Controls.Add(Button1)
         Controls.Add(lblSearch)
@@ -169,4 +193,5 @@ Partial Class frmPenalityList
     Friend WithEvents PrintDialog1 As PrintDialog
     Friend WithEvents btnPrint As Button
     Friend WithEvents PrintDocument1 As Printing.PrintDocument
+    Friend WithEvents Label1 As Label
 End Class

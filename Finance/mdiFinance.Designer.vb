@@ -40,30 +40,21 @@ Partial Class mdiFinance
         ToolStripMenuItem1 = New ToolStripMenuItem()
         AddNewPenalityToolStripMenuItem = New ToolStripMenuItem()
         ViewPenalityMasterToolStripMenuItem = New ToolStripMenuItem()
-        ToolStripSeparator3 = New ToolStripSeparator()
-        CloseLoanToolStripMenuItem = New ToolStripMenuItem()
         ToolStripSeparator1 = New ToolStripSeparator()
         ReportsToolStripMenuItem = New ToolStripMenuItem()
         AllLoanDetailsToolStripMenuItem = New ToolStripMenuItem()
+        ViewEmToolStripMenuItem = New ToolStripMenuItem()
+        GenerateLoanSummaryToolStripMenuItem = New ToolStripMenuItem()
         CustomerToolStripMenuItem = New ToolStripMenuItem()
         CreateNewCustomerToolStripMenuItem = New ToolStripMenuItem()
         EditCustomerToolStripMenuItem = New ToolStripMenuItem()
         ToolStripSeparator4 = New ToolStripSeparator()
         ReportsToolStripMenuItem1 = New ToolStripMenuItem()
-        OfficeExpeToolStripMenuItem = New ToolStripMenuItem()
-        DailyExpensesBillEntryToolStripMenuItem = New ToolStripMenuItem()
-        SearchViewExpensesBillsToolStripMenuItem = New ToolStripMenuItem()
-        ToolStripSeparator5 = New ToolStripSeparator()
-        ReportsToolStripMenuItem2 = New ToolStripMenuItem()
-        CalculationsToolStripMenuItem = New ToolStripMenuItem()
-        FinanceChargeCalcToolStripMenuItem = New ToolStripMenuItem()
-        PercentageCalcAmountToolStripMenuItem = New ToolStripMenuItem()
         HelpToolStripMenuItem = New ToolStripMenuItem()
         UserManualToolStripMenuItem = New ToolStripMenuItem()
         AboutToolStripMenuItem = New ToolStripMenuItem()
         FileSystemWatcher1 = New IO.FileSystemWatcher()
         FileSystemWatcher2 = New IO.FileSystemWatcher()
-        GenerateLoanSummaryToolStripMenuItem = New ToolStripMenuItem()
         MenuStrip1.SuspendLayout()
         CType(FileSystemWatcher1, ComponentModel.ISupportInitialize).BeginInit()
         CType(FileSystemWatcher2, ComponentModel.ISupportInitialize).BeginInit()
@@ -72,7 +63,7 @@ Partial Class mdiFinance
         ' MenuStrip1
         ' 
         MenuStrip1.ImageScalingSize = New Size(20, 20)
-        MenuStrip1.Items.AddRange(New ToolStripItem() {FileToolStripMenuItem, LoanToolStripMenuItem, CustomerToolStripMenuItem, OfficeExpeToolStripMenuItem, CalculationsToolStripMenuItem, HelpToolStripMenuItem})
+        MenuStrip1.Items.AddRange(New ToolStripItem() {FileToolStripMenuItem, LoanToolStripMenuItem, CustomerToolStripMenuItem, HelpToolStripMenuItem})
         MenuStrip1.Location = New Point(0, 0)
         MenuStrip1.Name = "MenuStrip1"
         MenuStrip1.Size = New Size(1924, 28)
@@ -94,7 +85,7 @@ Partial Class mdiFinance
         ' 
         ' LoanToolStripMenuItem
         ' 
-        LoanToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {NewLoanRegistrationToolStripMenuItem, EditNewLoanRegistrationToolStripMenuItem, ToolStripSeparator2, EMIDetailsToolStripMenuItem, PaymentToolStripMenuItem, ToolStripMenuItem3, ToolStripMenuItem1, ToolStripSeparator3, CloseLoanToolStripMenuItem, ToolStripSeparator1, ReportsToolStripMenuItem})
+        LoanToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {NewLoanRegistrationToolStripMenuItem, EditNewLoanRegistrationToolStripMenuItem, ToolStripSeparator2, EMIDetailsToolStripMenuItem, PaymentToolStripMenuItem, ToolStripMenuItem3, ToolStripMenuItem1, ToolStripSeparator1, ReportsToolStripMenuItem})
         LoanToolStripMenuItem.Name = "LoanToolStripMenuItem"
         LoanToolStripMenuItem.Size = New Size(55, 24)
         LoanToolStripMenuItem.Text = "Loan"
@@ -158,7 +149,7 @@ Partial Class mdiFinance
         ' ViewLoanReceiptsToolStripMenuItem
         ' 
         ViewLoanReceiptsToolStripMenuItem.Name = "ViewLoanReceiptsToolStripMenuItem"
-        ViewLoanReceiptsToolStripMenuItem.Size = New Size(220, 26)
+        ViewLoanReceiptsToolStripMenuItem.Size = New Size(224, 26)
         ViewLoanReceiptsToolStripMenuItem.Text = "View Loan Receipts"
         ' 
         ' ViewAllReceiptsToolStripMenuItem
@@ -186,17 +177,6 @@ Partial Class mdiFinance
         ViewPenalityMasterToolStripMenuItem.Size = New Size(184, 26)
         ViewPenalityMasterToolStripMenuItem.Text = "View All AFC"
         ' 
-        ' ToolStripSeparator3
-        ' 
-        ToolStripSeparator3.Name = "ToolStripSeparator3"
-        ToolStripSeparator3.Size = New Size(270, 6)
-        ' 
-        ' CloseLoanToolStripMenuItem
-        ' 
-        CloseLoanToolStripMenuItem.Name = "CloseLoanToolStripMenuItem"
-        CloseLoanToolStripMenuItem.Size = New Size(273, 26)
-        CloseLoanToolStripMenuItem.Text = "Close Loan"
-        ' 
         ' ToolStripSeparator1
         ' 
         ToolStripSeparator1.Name = "ToolStripSeparator1"
@@ -204,7 +184,7 @@ Partial Class mdiFinance
         ' 
         ' ReportsToolStripMenuItem
         ' 
-        ReportsToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {AllLoanDetailsToolStripMenuItem, GenerateLoanSummaryToolStripMenuItem})
+        ReportsToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {AllLoanDetailsToolStripMenuItem, ViewEmToolStripMenuItem, GenerateLoanSummaryToolStripMenuItem})
         ReportsToolStripMenuItem.Name = "ReportsToolStripMenuItem"
         ReportsToolStripMenuItem.Size = New Size(273, 26)
         ReportsToolStripMenuItem.Text = "Loan Reports"
@@ -212,8 +192,20 @@ Partial Class mdiFinance
         ' AllLoanDetailsToolStripMenuItem
         ' 
         AllLoanDetailsToolStripMenuItem.Name = "AllLoanDetailsToolStripMenuItem"
-        AllLoanDetailsToolStripMenuItem.Size = New Size(254, 26)
+        AllLoanDetailsToolStripMenuItem.Size = New Size(287, 26)
         AllLoanDetailsToolStripMenuItem.Text = "View All Loan Details"
+        ' 
+        ' ViewEmToolStripMenuItem
+        ' 
+        ViewEmToolStripMenuItem.Name = "ViewEmToolStripMenuItem"
+        ViewEmToolStripMenuItem.Size = New Size(287, 26)
+        ViewEmToolStripMenuItem.Text = "Generate Emi Pending Report"
+        ' 
+        ' GenerateLoanSummaryToolStripMenuItem
+        ' 
+        GenerateLoanSummaryToolStripMenuItem.Name = "GenerateLoanSummaryToolStripMenuItem"
+        GenerateLoanSummaryToolStripMenuItem.Size = New Size(287, 26)
+        GenerateLoanSummaryToolStripMenuItem.Text = "Generate Loan Summary"
         ' 
         ' CustomerToolStripMenuItem
         ' 
@@ -245,55 +237,6 @@ Partial Class mdiFinance
         ReportsToolStripMenuItem1.Size = New Size(213, 26)
         ReportsToolStripMenuItem1.Text = "View All Customer"
         ' 
-        ' OfficeExpeToolStripMenuItem
-        ' 
-        OfficeExpeToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {DailyExpensesBillEntryToolStripMenuItem, SearchViewExpensesBillsToolStripMenuItem, ToolStripSeparator5, ReportsToolStripMenuItem2})
-        OfficeExpeToolStripMenuItem.Name = "OfficeExpeToolStripMenuItem"
-        OfficeExpeToolStripMenuItem.Size = New Size(83, 24)
-        OfficeExpeToolStripMenuItem.Text = "Accounts"
-        ' 
-        ' DailyExpensesBillEntryToolStripMenuItem
-        ' 
-        DailyExpensesBillEntryToolStripMenuItem.Name = "DailyExpensesBillEntryToolStripMenuItem"
-        DailyExpensesBillEntryToolStripMenuItem.Size = New Size(271, 26)
-        DailyExpensesBillEntryToolStripMenuItem.Text = "Daily Expenses Bill Entry"
-        ' 
-        ' SearchViewExpensesBillsToolStripMenuItem
-        ' 
-        SearchViewExpensesBillsToolStripMenuItem.Name = "SearchViewExpensesBillsToolStripMenuItem"
-        SearchViewExpensesBillsToolStripMenuItem.Size = New Size(271, 26)
-        SearchViewExpensesBillsToolStripMenuItem.Text = "Search & View Expenses Bills"
-        ' 
-        ' ToolStripSeparator5
-        ' 
-        ToolStripSeparator5.Name = "ToolStripSeparator5"
-        ToolStripSeparator5.Size = New Size(268, 6)
-        ' 
-        ' ReportsToolStripMenuItem2
-        ' 
-        ReportsToolStripMenuItem2.Name = "ReportsToolStripMenuItem2"
-        ReportsToolStripMenuItem2.Size = New Size(271, 26)
-        ReportsToolStripMenuItem2.Text = "Reports"
-        ' 
-        ' CalculationsToolStripMenuItem
-        ' 
-        CalculationsToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {FinanceChargeCalcToolStripMenuItem, PercentageCalcAmountToolStripMenuItem})
-        CalculationsToolStripMenuItem.Name = "CalculationsToolStripMenuItem"
-        CalculationsToolStripMenuItem.Size = New Size(103, 24)
-        CalculationsToolStripMenuItem.Text = "Calculations"
-        ' 
-        ' FinanceChargeCalcToolStripMenuItem
-        ' 
-        FinanceChargeCalcToolStripMenuItem.Name = "FinanceChargeCalcToolStripMenuItem"
-        FinanceChargeCalcToolStripMenuItem.Size = New Size(264, 26)
-        FinanceChargeCalcToolStripMenuItem.Text = "Charge Calc - Days"
-        ' 
-        ' PercentageCalcAmountToolStripMenuItem
-        ' 
-        PercentageCalcAmountToolStripMenuItem.Name = "PercentageCalcAmountToolStripMenuItem"
-        PercentageCalcAmountToolStripMenuItem.Size = New Size(264, 26)
-        PercentageCalcAmountToolStripMenuItem.Text = "Percentage Calc - Amount"
-        ' 
         ' HelpToolStripMenuItem
         ' 
         HelpToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {UserManualToolStripMenuItem, AboutToolStripMenuItem})
@@ -322,12 +265,6 @@ Partial Class mdiFinance
         ' 
         FileSystemWatcher2.EnableRaisingEvents = True
         FileSystemWatcher2.SynchronizingObject = Me
-        ' 
-        ' GenerateLoanSummaryToolStripMenuItem
-        ' 
-        GenerateLoanSummaryToolStripMenuItem.Name = "GenerateLoanSummaryToolStripMenuItem"
-        GenerateLoanSummaryToolStripMenuItem.Size = New Size(254, 26)
-        GenerateLoanSummaryToolStripMenuItem.Text = "Generate Loan Summary"
         ' 
         ' mdiFinance
         ' 
@@ -364,22 +301,12 @@ Partial Class mdiFinance
     Friend WithEvents EMIEntryToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PaymentToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PaymentEntryToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents CloseLoanToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ReportsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AllLoanDetailsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
-    Friend WithEvents ToolStripSeparator3 As ToolStripSeparator
     Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
     Friend WithEvents ToolStripSeparator4 As ToolStripSeparator
     Friend WithEvents ReportsToolStripMenuItem1 As ToolStripMenuItem
-    Friend WithEvents OfficeExpeToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents DailyExpensesBillEntryToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents SearchViewExpensesBillsToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ToolStripSeparator5 As ToolStripSeparator
-    Friend WithEvents ReportsToolStripMenuItem2 As ToolStripMenuItem
-    Friend WithEvents CalculationsToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents FinanceChargeCalcToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents PercentageCalcAmountToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents HelpToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents AddNewPenalityToolStripMenuItem As ToolStripMenuItem
@@ -391,4 +318,5 @@ Partial Class mdiFinance
     Friend WithEvents ViewLoanReceiptsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ViewAllReceiptsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents GenerateLoanSummaryToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ViewEmToolStripMenuItem As ToolStripMenuItem
 End Class

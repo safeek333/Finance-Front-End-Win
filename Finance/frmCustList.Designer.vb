@@ -31,6 +31,7 @@ Partial Class frmCustList
         Dim DataGridViewCellStyle7 As DataGridViewCellStyle = New DataGridViewCellStyle()
         Dim DataGridViewCellStyle8 As DataGridViewCellStyle = New DataGridViewCellStyle()
         Dim DataGridViewCellStyle9 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As DataGridViewCellStyle = New DataGridViewCellStyle()
         dgCustList = New DataGridView()
         custId = New DataGridViewTextBoxColumn()
         custType = New DataGridViewTextBoxColumn()
@@ -44,80 +45,88 @@ Partial Class frmCustList
         lblSearch = New Label()
         txtSearch = New TextBox()
         Button1 = New Button()
+        Label1 = New Label()
         CType(dgCustList, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' dgCustList
         ' 
+        DataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = SystemColors.Control
+        DataGridViewCellStyle1.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        DataGridViewCellStyle1.ForeColor = SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = DataGridViewTriState.True
+        dgCustList.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         dgCustList.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         dgCustList.Columns.AddRange(New DataGridViewColumn() {custId, custType, custName, custNative, custMobileNum, custAddr, custDob, custAge, custStatus})
-        dgCustList.Dock = DockStyle.Top
-        dgCustList.Location = New Point(0, 0)
+        dgCustList.Location = New Point(0, 56)
         dgCustList.Name = "dgCustList"
         dgCustList.RowHeadersWidth = 51
         dgCustList.RowTemplate.Height = 29
-        dgCustList.Size = New Size(1051, 570)
+        dgCustList.Size = New Size(1176, 850)
         dgCustList.TabIndex = 0
         ' 
         ' custId
         ' 
         custId.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
-        DataGridViewCellStyle1.Font = New Font("Microsoft Sans Serif", 12.0F, FontStyle.Bold, GraphicsUnit.Point)
-        custId.DefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        custId.DefaultCellStyle = DataGridViewCellStyle2
         custId.HeaderText = "CUST ID"
         custId.MinimumWidth = 6
         custId.Name = "custId"
         custId.ReadOnly = True
-        custId.Width = 85
+        custId.Width = 88
         ' 
         ' custType
         ' 
         custType.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
-        DataGridViewCellStyle2.Font = New Font("Microsoft Sans Serif", 12.0F, FontStyle.Bold, GraphicsUnit.Point)
-        custType.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle3.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        custType.DefaultCellStyle = DataGridViewCellStyle3
         custType.HeaderText = "TYPE"
         custType.MinimumWidth = 6
         custType.Name = "custType"
         custType.ReadOnly = True
-        custType.Width = 70
+        custType.Width = 73
         ' 
         ' custName
         ' 
         custName.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
-        DataGridViewCellStyle3.Font = New Font("Microsoft Sans Serif", 12.0F, FontStyle.Bold, GraphicsUnit.Point)
-        custName.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle4.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        custName.DefaultCellStyle = DataGridViewCellStyle4
         custName.HeaderText = "NAME"
         custName.MinimumWidth = 6
         custName.Name = "custName"
         custName.ReadOnly = True
-        custName.Width = 80
+        custName.Width = 83
         ' 
         ' custNative
         ' 
         custNative.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
-        DataGridViewCellStyle4.Font = New Font("Microsoft Sans Serif", 12.0F, FontStyle.Bold, GraphicsUnit.Point)
-        custNative.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle5.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        custNative.DefaultCellStyle = DataGridViewCellStyle5
         custNative.HeaderText = "NATIVE"
         custNative.MinimumWidth = 6
         custNative.Name = "custNative"
         custNative.ReadOnly = True
-        custNative.Width = 87
+        custNative.Width = 92
         ' 
         ' custMobileNum
         ' 
         custMobileNum.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
-        DataGridViewCellStyle5.Font = New Font("Microsoft Sans Serif", 12.0F, FontStyle.Bold, GraphicsUnit.Point)
-        custMobileNum.DefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle6.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        custMobileNum.DefaultCellStyle = DataGridViewCellStyle6
         custMobileNum.HeaderText = "MOBILE NUMBER"
         custMobileNum.MinimumWidth = 6
         custMobileNum.Name = "custMobileNum"
         custMobileNum.ReadOnly = True
-        custMobileNum.Width = 141
+        custMobileNum.Width = 149
         ' 
         ' custAddr
         ' 
-        DataGridViewCellStyle6.Font = New Font("Microsoft Sans Serif", 12.0F, FontStyle.Bold, GraphicsUnit.Point)
-        custAddr.DefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle7.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        custAddr.DefaultCellStyle = DataGridViewCellStyle7
         custAddr.HeaderText = "ADDRESS"
         custAddr.MinimumWidth = 6
         custAddr.Name = "custAddr"
@@ -127,41 +136,42 @@ Partial Class frmCustList
         ' custDob
         ' 
         custDob.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
-        DataGridViewCellStyle7.Font = New Font("Microsoft Sans Serif", 12.0F, FontStyle.Bold, GraphicsUnit.Point)
-        custDob.DefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle8.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        custDob.DefaultCellStyle = DataGridViewCellStyle8
         custDob.HeaderText = "DATE OF BIRTH"
         custDob.MinimumWidth = 6
         custDob.Name = "custDob"
         custDob.ReadOnly = True
-        custDob.Width = 128
+        custDob.Width = 136
         ' 
         ' custAge
         ' 
         custAge.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
-        DataGridViewCellStyle8.Font = New Font("Microsoft Sans Serif", 12.0F, FontStyle.Bold, GraphicsUnit.Point)
-        custAge.DefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle9.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        custAge.DefaultCellStyle = DataGridViewCellStyle9
         custAge.HeaderText = "AGE"
         custAge.MinimumWidth = 6
         custAge.Name = "custAge"
         custAge.ReadOnly = True
-        custAge.Width = 66
+        custAge.Width = 68
         ' 
         ' custStatus
         ' 
         custStatus.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
-        DataGridViewCellStyle9.Font = New Font("Microsoft Sans Serif", 12.0F, FontStyle.Bold, GraphicsUnit.Point)
-        custStatus.DefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle10.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        custStatus.DefaultCellStyle = DataGridViewCellStyle10
         custStatus.HeaderText = "STATUS"
         custStatus.MinimumWidth = 6
         custStatus.Name = "custStatus"
         custStatus.ReadOnly = True
-        custStatus.Width = 88
+        custStatus.Width = 92
         ' 
         ' lblSearch
         ' 
         lblSearch.AutoSize = True
-        lblSearch.Font = New Font("Segoe UI", 12.0F, FontStyle.Bold, GraphicsUnit.Point)
-        lblSearch.Location = New Point(4, 591)
+        lblSearch.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        lblSearch.ForeColor = Color.Teal
+        lblSearch.Location = New Point(660, 22)
         lblSearch.Name = "lblSearch"
         lblSearch.Size = New Size(67, 28)
         lblSearch.TabIndex = 4
@@ -170,28 +180,41 @@ Partial Class frmCustList
         ' txtSearch
         ' 
         txtSearch.BorderStyle = BorderStyle.FixedSingle
-        txtSearch.Font = New Font("Segoe UI", 12.0F, FontStyle.Bold, GraphicsUnit.Point)
-        txtSearch.Location = New Point(71, 588)
+        txtSearch.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        txtSearch.Location = New Point(727, 19)
         txtSearch.Name = "txtSearch"
         txtSearch.Size = New Size(272, 34)
         txtSearch.TabIndex = 3
         ' 
         ' Button1
         ' 
-        Button1.Font = New Font("Segoe UI", 12.0F, FontStyle.Bold, GraphicsUnit.Point)
-        Button1.Location = New Point(71, 649)
+        Button1.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        Button1.ForeColor = Color.Teal
+        Button1.Location = New Point(1005, 12)
         Button1.Name = "Button1"
-        Button1.Size = New Size(272, 41)
+        Button1.Size = New Size(171, 41)
         Button1.TabIndex = 10
         Button1.Text = "Export As PDF"
         Button1.UseVisualStyleBackColor = True
         Button1.UseWaitCursor = True
         ' 
+        ' Label1
+        ' 
+        Label1.AutoSize = True
+        Label1.Font = New Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point)
+        Label1.ForeColor = Color.Teal
+        Label1.Location = New Point(12, 9)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(207, 38)
+        Label1.TabIndex = 11
+        Label1.Text = "All Customers "
+        ' 
         ' frmCustList
         ' 
-        AutoScaleDimensions = New SizeF(8.0F, 20.0F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1051, 729)
+        ClientSize = New Size(1245, 729)
+        Controls.Add(Label1)
         Controls.Add(Button1)
         Controls.Add(lblSearch)
         Controls.Add(txtSearch)
@@ -217,4 +240,5 @@ Partial Class frmCustList
     Friend WithEvents lblSearch As Label
     Friend WithEvents txtSearch As TextBox
     Friend WithEvents Button1 As Button
+    Friend WithEvents Label1 As Label
 End Class
